@@ -1,0 +1,20 @@
+.nav-back{
+    /*box-shadow: 5px 5px 5px 0px rgba(217,210,217,1);  */
+    background-color:white;
+}
+.tagline{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+
+}
+h1{
+    color:#33e9ff;
+}
+
+.boundary
+{
+    width:100%;
+    height:20px;
+}

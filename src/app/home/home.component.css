@@ -1,0 +1,96 @@
+
+#home_banner{
+    background-image: url("../../assets/home_banner.jpg");
+}
+img{
+    max-width:556px;
+    max-height:330px;
+}
+.quality-content hr{
+    width:10%;
+    border-top: 6px solid yellow;
+    margin-bottom: 2%; 
+}
+
+.quality-content h3{
+    color:rgb(243, 22, 22);
+}
+.quality-content h2{
+    font-weight:bold;
+}
+.quality-content p{
+    font-size:18px;
+}
+#qualities h1{
+   padding-top:3%;
+
+   font-weight: bold;
+}
+.quality-content{
+    text-align: center;
+    background-color:white;
+    font-family: Montserrat;
+}
+.col-des{
+       color:white;
+}
+.col-des span:hover{
+    color:yellow;
+}
+
+.container-fluid{
+    padding: 0px;
+}
+.expertise{
+    /*position:absolute;*/
+    width:100%;
+    background-image: url("../../assets/comp-back.jpg");
+}
+.expertise-info{
+    padding-top:2%;
+    text-align: center;
+    background-color:black;
+    color:white;
+    opacity:0.8;
+    
+}
+.expertise-info hr{
+    width:10%;
+    border-top: 6px solid yellow;
+    margin-bottom: 2%; 
+}
+.btn-deco{
+    margin-top:3%;
+    margin-bottom:2%;
+    width:20%;
+    color:rgb(250, 159, 41);
+    border:2px solid rgb(250, 159, 41);
+    border-radius:50px;
+}
+.btn-deco:hover{
+    color:white;
+    background-color: rgb(202, 115, 0);
+    opacity:1;
+}
+#addservice{
+    margin-top:2%;
+}
+
+#projects{
+    text-align: center;
+    margin-top:3%;
+}
+
+#projects hr{
+    width:10%;
+    border-top: 6px solid yellow;
+    margin-bottom: 3%; 
+
+}
+#projects .card{
+    border:none;
+}
+#projects .card-title{
+    font-size: 2rem;
+    padding-top: 2%;
+}

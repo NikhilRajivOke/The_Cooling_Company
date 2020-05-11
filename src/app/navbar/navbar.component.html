@@ -1,0 +1,66 @@
+<head>
+    <style>
+        @media(max-width:576px)
+        {
+            .bh{
+                height:auto;
+                max-width:75%;
+                }
+            .nav-background-color
+                {
+                    background-color:white;
+                    color:black;
+                }            
+        };
+       
+        .navbar{
+            position:fixed;
+            overflow:hidden;
+        }
+        section{
+            margin-bottom:100px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <main>
+                    <nav class="navbar navbar-expand-lg nav-back nav-background-color fixed-top" id="mainNav">
+                        <div class="container">
+                            <a class="navbar-brand js-scroll-trigger"><img src="./assets/new_logo.jpg" class="img-fluid bh" height="100px" width="125px"></a>
+                            <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle Navigation"><span style="color:black" class="fa fa-bars"></span></button>
+                                <div class="collapse navbar-collapse" id="navbarResponsive">
+                                    <ul class="navbar-nav text-uppercase ml-auto justify-content-end navbar-primary" >
+                                        <li class="dropdown">
+                                            <a class="nav-link dropdown-toggle" id="#navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black;">Cold Storages</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >Cold Rooms</a>
+                                                
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >Cold Storages</a>
+                                                
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >Ripening Chambers</a>
+                                            </div>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a class="nav-link dropdown-toggle" id="#navbar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black;">Air Conditioning and HVAC Solutions</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >HVAC solution </a>
+                                                
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >AC solutions</a> 
+                                                
+                                                <a class="nav-link pr-5 pl-5 js-scroll-trigger dropdown-item" routerLink="" >Clean Rooms</a>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link pr-5"routerLink='' style="color:black">Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a class="nav-link pr-5"routerLink='' style="color:black;margin-left:0%">Blog</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                        </div>
+                    </nav>
+    </main>
+</section>
+</body>
