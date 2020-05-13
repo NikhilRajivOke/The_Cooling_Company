@@ -49,10 +49,8 @@ img{
 .expertise-info{
     padding-top:2%;
     text-align: center;
-    background-color:black;
+    background-color:rgba(0,0,0,0.8);
     color:white;
-    opacity:0.8;
-    
 }
 .expertise-info hr{
     width:10%;
@@ -69,8 +67,8 @@ img{
 }
 .btn-deco:hover{
     color:white;
-    background-color: rgb(202, 115, 0);
-    opacity:1;
+    background-color:rgb(250, 159, 41);
+   
 }
 #addservice{
     margin-top:2%;
