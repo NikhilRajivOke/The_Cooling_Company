@@ -42,6 +42,10 @@
             #projects .card {
                 padding-top: 5%;
             }
+            .slick-slider{
+                
+            }
+            
         }
     </style>
 </head>
@@ -231,77 +235,21 @@
         <h5>PROJECT PORTFOLIO</h5>
         <h2>Our Projects</h2>
         <hr>
-        <div class="container-fluid slider">
-            <div class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li class="active" data-target="#carouselSlide" data-slide-to="0"></li>
-                    <li data-target="#carouselSlide" data-slide-to="1"></li>
-                    <!--<li data-target="#carouselSlide" data-slide-to="2"></li>-->
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row mx-auto">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/cold-storage.jpg" class="img-fluid"
-                                            alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">Food Storage</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/ripening.jpg" class="img-fluid" alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">Ripening Chambers</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/ac-soln.jpg" class="img-fluid" alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">AC solutions</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/cold-ware.jpg" class="img-fluid" alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">Cold Storages</div>
-                                </div>
-                            </div>
-                        </div>
+        <div class="container mx-auto">
+        <div class="row">  
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">  
+              <div ngxSlickItem  *ngFor="let image of imagesData" class="slide">  
+                <div class="card">
+                    <div class="card-image card-img-top">
+                        <img src="{{image.img}}" class="img-fluid"
+                            alt="Project Images" />
                     </div>
-
-                    <div class="carousel-item">
-                        <div class="row mx-auto">
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/ac-soln.jpg" class="img-fluid" alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">AC solutions</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <div class="card-image card-img-top">
-                                        <img src="../../assets/cold-ware.jpg" class="img-fluid" alt="Project Images" />
-                                    </div>
-                                    <div class="card-title">Cold Storages</div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    <div class="card-title">{{image.title}}</div>
                 </div>
-            </div>
-         
-        </div>
+              </div>  
+            </ngx-slick-carousel>  
+          </div>
+          </div>
     </div>
 
 </body>
