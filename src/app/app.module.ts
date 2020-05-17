@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
-
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,SlickCarouselModule,
     AppRoutingModule,RouterModule.forRoot([
       {
         path:"",component:HomeComponent

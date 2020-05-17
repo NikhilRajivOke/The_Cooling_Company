@@ -86,9 +86,17 @@ img{
 
 }
 #projects .card{
+    align-self: center;
     border:none;
+    text-align: center;
+    margin-left:1%;
+    margin-right:1%;
 }
 #projects .card-title{
     font-size: 2rem;
     padding-top: 2%;
 }
+.slick-slider {  
+    width:90%;  
+    margin:auto;
+  }
