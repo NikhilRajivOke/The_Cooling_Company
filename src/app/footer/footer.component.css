@@ -1,0 +1,51 @@
+.footer{
+    position: relative;
+    background-color:rgb(22, 21, 21);
+    color:white;
+    margin-top:4%;
+}
+.footer li{
+  margin:0;
+  padding:0; 
+  line-height:0.5em;  
+}
+.footer a{
+    position: relative;
+    text-decoration: none;
+    color:white;
+}
+.footer ul{
+    margin-top:3%;
+    list-style-type: none;
+}
+.footer .logos span{
+    margin-left:3%;
+    margin-right:3%;
+}
+
+.footer .container{
+    padding-top: 2%;
+}
+.footer .description{
+    margin-top:15%;
+}
+.footer .copyright{
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-size:12px;
+}
+.footer .copyright p{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.footer hr{
+    color:white;
+}
+.blog{
+    margin-bottom: 5%;
+}
+.blog .blog-data{
+    margin-bottom: 2%;
+}
+
