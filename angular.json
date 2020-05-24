@@ -24,18 +24,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/slick-carousel/slick/slick.css",
               "node_modules/slick-carousel/slick/slick-theme.scss"
-              
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js",
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/slick-carousel/slick/slick.min.js"
-              
-              
-              ]
+            ]
           },
           "configurations": {
             "production": {
@@ -98,7 +96,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -129,6 +127,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "thecoolcomp"
+    }
+  },
+  "defaultProject": "thecoolcomp",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
