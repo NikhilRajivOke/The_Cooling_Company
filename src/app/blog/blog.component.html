@@ -1,0 +1,136 @@
+<head>
+    <style>
+        @media(max-width:576px) {
+            .blog-head #our_story {
+                font-size: 24px;
+            }
+
+            .blog-head #sub_head {
+
+                font-size: 18px;
+            }
+
+            .styleHead {
+                font-size: 30px;
+            }
+
+            #blog video {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="blog-header">
+            <div class="header-background">
+                <div class="blog-head">
+                    <p id="our_story"><span class="styleHead">O</span>ur <span class="styleHead">S</span>tories</p>
+                    <p id="sub_head">Right From the Ceo's Desk</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blog" class="container">
+        <div class="row mx-auto">
+            <div class="col-md-6" style="padding: 0;">
+                <video src="../../assets/videos/Blog-vid.mp4" [muted]="true" controls autoplay playsinline loop></video>
+            </div>
+            <div class="col-md-6">
+                <div class="blog-content">
+                    <div class="blog-data">
+                        <p class="blog-heading">Blog head1</p>
+                        <hr>
+                        <div class="blog-body">
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                printer took a galley of type and scrambled it to make a type specimen book. It has
+                                survived not only five centuries, but also the leap into electronic typesetting,
+                                remaining essentially unchanged. It was popularised in the 1960s with the release of
+                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                        <hr>
+                        <div class="blog-author">
+                            <div class="author-name">-Kiran Sapali</div>
+                            <div class="position">CEO,The Cooling Company</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid sub-blogs">
+        <div class="row mx-auto">
+            <div class="col-md-4" *ngFor='let blog of blogData | slice:0:3'>
+                <div class="card">
+                    <div class="img-contain"><img src='{{blog.img}}' alt="blog image" class="img-fluid blog-img"></div>
+                    <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
+                    <div class="blog-content">{{blog.blog_content}}</div>
+                    <hr>
+                    <div class="blog-author">{{blog.author}}</div>
+                    <p>{{blog.post}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alignment"><button id="view-blogs" class="btn btn-trig">View More</button></div>
+
+    <section id="hidden-blogs">
+        <div class="container-fluid sub-blogs">
+            <div class="row mx-auto">
+                <div class="col-md-4" *ngFor='let blog of blogData | slice:3:7'>
+                    <div class="card">
+                        <div class="img-contain"><img src='{{blog.img}}' alt="blog image" class="img-fluid blog-img">
+                        </div>
+                        <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
+                        <div class="blog-content">{{blog.blog_content}}</div>
+                        <hr>
+                        <div class="blog-author">{{blog.author}}</div>
+                        <p>{{blog.post}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="alignment"><button id="close-blog" class="btn btn-trig">Close</button></div>
+
+    <section id="social-media">
+        <div class="container">
+            <div class="row mx-auto">
+
+                <div class="facebook">
+                    <span class="fab fa-facebook fa-7x social-icon"></span>
+                    <button id="facebook" class="btn btn-decorate">Like Us</button>
+                </div>
+
+
+                <div class="twitter">
+                    <span class="fab fa-twitter fa-7x social-icon"></span>
+                    <button id="twitter" class="btn btn-decorate">Follow us</button>
+                </div>
+
+
+                <div class="instagram">
+                    <div class="fab fa-instagram fa-7x social-icon"></div>
+                    <button id="instagram" class="btn btn-decorate">Follow us</button>
+                </div>
+
+
+                <div class="linkedin">
+                    <div class="fab fa-linkedin fa-7x social-icon"></div>
+                    <button id="linkedin" class="btn btn-decorate">Connect us</button>
+                </div>
+
+
+                <div class="youtube">
+                    <div class="fab fa-youtube fa-7x social-icon"></div>
+                    <button id="youtube" class="btn btn-decorate">Subscribe</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>

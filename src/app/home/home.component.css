@@ -1,4 +1,6 @@
-
+body{
+    overflow: hidden;
+}
 #home_banner{
     background-image: url("../../assets/home_banner.jpg");
 }
@@ -10,6 +12,18 @@ img{
     width:10%;
     border-top: 6px solid yellow;
     margin-bottom: 2%; 
+}
+.qual {
+    
+    position: relative;
+    animation-name: linear-animate;
+    animation-duration: 6s;
+    animation-fill-mode:both;
+}
+@keyframes linear-animate{
+    from {left:0;}
+    to {left:44%}
+
 }
 
 .quality-content h3{
@@ -23,7 +37,7 @@ img{
 }
 #qualities h1{
    padding-top:3%;
-
+   position: relative;
    font-weight: bold;
 }
 .quality-content{
@@ -75,7 +89,7 @@ img{
 }
 
 #projects{
-    text-align: center;
+    /*text-align: center;*/
     margin-top:3%;
 }
 

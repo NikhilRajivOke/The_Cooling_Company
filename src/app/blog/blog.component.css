@@ -1,0 +1,173 @@
+body{
+    overflow:hidden
+}
+
+.container-fluid{
+    margin:0;
+    padding: 0;
+}
+.header-background{
+    position: relative;
+    background-image: linear-gradient(to right , rgb(135, 185, 235),rgb(87, 167, 233));
+}
+.blog-head{
+    color:white;
+}
+
+.blog-head #our_story{
+    position:relative;
+    text-align: left;
+    /*padding:3% 0% 0% 0%;*/
+    margin:0;
+    font-size: 4rem;
+}
+.blog-head #sub_head{
+    position:relative;
+    text-align: right;
+    padding-bottom: 2%;
+    font-size: 2rem;
+}
+.styleHead{
+    font-size: 6rem;
+}
+#blog{
+    padding:0;
+    margin-top: 5%;;
+    margin-bottom: 3%;
+    box-shadow:0px 0px 10px 0 rgba(0,0,0,0.9);
+}
+#blog .card-body{
+    display: flex;
+    
+}
+#blog video{
+    width:100%;
+    height:100%;
+    object-fit: fill;
+    border:1px solid white;
+    /*transition: transform 300ms;*/
+    
+   
+}
+/*video:hover{
+    transform: scale(1.1);
+}*/
+
+#blog .blog-heading{
+    text-align: left;
+    font-size: 2em;
+}
+#blog .blog-author{
+    text-align: right;
+    padding-right: 5%;
+}
+.sub-blogs .card{
+    margin:5% 5%;
+    box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.9);
+    transition: transform 300ms;
+}
+
+.sub-blogs .card:hover{
+    transform:scale(1.1);
+    box-shadow: 0px 4px 20px 0 rgba(0,0,0,0.9);
+}
+.sub-blogs .card .img-contain{
+    display: inline-block;
+    overflow: hidden;
+    
+}
+.sub-blogs .card .blog-img{ 
+    display: block;
+    transition: transform .4s;
+}
+.sub-blogs .card .blog-img:hover{
+transform:scale(1.3);
+transform-origin: 50% 50%;
+}
+
+.sub-blogs .card .blog-content{
+    padding:5% 5% 0% 5%;
+    text-align: justify;
+}
+.sub-blogs .card .blog-author,.post{
+   text-align: right;
+}
+
+
+.btn-trig{
+    align-items: center;
+    width:20%;
+    margin-top:3%;
+    border: 1px solid orange;
+    border-radius:50px;
+    margin-bottom:1%;
+    /*transition: transform 300ms;*/
+}
+
+.btn-trig:hover{
+    /*transform: scale(1.1);*/
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);
+    background-color: orange;
+    color:white;
+}
+.alignment{
+    text-align: center;
+}
+#social-media{
+    color:white;
+    text-align: center;
+    align-self: center;
+    margin-top:3%;
+}
+#social-media .facebook{
+    background-color: rgb(60,90,153);
+}
+
+#facebook:hover{
+    box-shadow: inset 0 50px 0 0 white;
+    color: rgb(60,90,153);
+}
+#social-media .twitter{
+    background-color: rgb(96,169,221);
+}
+#twitter:hover{
+    box-shadow: inset 0 50px 0 0 white;
+    color: rgb(96,169,221);
+}
+#social-media .instagram{
+    background-image:linear-gradient(rgb(110,81,197),rgb(233,58,87));
+}
+#instagram:hover{
+    box-shadow: inset 0 50px 0 0 white;
+    color:red;
+}
+#social-media .linkedin{
+    background-color: rgb(0, 119, 183);
+}
+#linkedin:hover{
+    box-shadow: inset 0 50px 0 0 white;
+    color:rgb(0, 119, 183);
+}
+#social-media .youtube{
+    background-color:rgb(255,0,0)
+}
+#youtube:hover{
+    box-shadow: inset 0 50px 0 0 white;
+    color:rgb(255,0,0);
+}
+.btn-decorate{
+    border:1px solid white;
+    width:60%;
+    color:white;
+    margin:5%;
+    transition:ease-out 0.4s;
+    display:inline-block;
+}
+
+#social-media .row{
+    display:flexbox;
+    flex-basis: 0;
+}
+#social-media .row .social-icon{
+    padding:15%;
+}
