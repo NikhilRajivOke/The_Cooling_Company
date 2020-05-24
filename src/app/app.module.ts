@@ -9,18 +9,23 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { FooterComponent } from './footer/footer.component';
+import { BlogComponent } from './blog/blog.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,SlickCarouselModule,BrowserAnimationsModule,
     AppRoutingModule,RouterModule.forRoot([
       {
         path:"",component:HomeComponent
+      },
+      {
+        path:"blogs",component:BlogComponent,
       }
     ])
   ],
