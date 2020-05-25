@@ -6,9 +6,12 @@ import * as $ from 'jquery';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-
+  modalData:any;
   constructor() { }
-
+  modalUpdate(data:any){
+    this.modalData=data;
+    console.log(this.modalData);
+  }
   blogData = [
     {
       img: "../../assets/blog1.jpg",
