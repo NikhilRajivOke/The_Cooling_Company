@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:300,400,600,700');
+
+.container{
+    .prod_image{
+        position: relative;
+        .get_quote{
+            z-index: 3;
+            position: absolute;
+           
+            button{
+                color: #fff;
+             background-color: black;
+            width: 100%;
+            }
+        &:hover{
+            .get_quote{
+                display: block;
+            }
+        }
+    }
+    
+         
+    }
+   
+    .products_desc{
+        font-family: 'Lato',sans-serif;
+        h2{
+            margin-top: 20px;
+            font-family: 'Lato',sans-serif;
+            font-weight: 700;
+            text-align: center;
+            color: #fff;
+           
+        }
+        p{
+            font-size: 16px;
+            font-family: 'Lato',sans-serif;
+            font-weight: 400;
+            color: #8F95A9;
+        }
+        .prod_btn{
+            margin-top: 8rem;
+            border-width: 2px;
+            border-color: #fff;
+        }
+
+    }
+    
+}
