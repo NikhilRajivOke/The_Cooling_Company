@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Products2Component implements OnInit {
 
+  data:any=[];
+  
   constructor() { }
 
   ngOnInit() {
   }
+  dataList=
+    {"img":"././assets/products/dehumid_dryer.jpg",
+    "title":"Demo Title"
+    }
 
+  
 }
