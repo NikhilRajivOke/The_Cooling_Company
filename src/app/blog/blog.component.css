@@ -93,6 +93,10 @@ transform-origin: 50% 50%;
 }
 
 .sub-blogs .card .blog-content{
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height:7.5em;
     padding:5% 5% 0% 5%;
     text-align: justify;
 }
@@ -177,4 +181,54 @@ transform-origin: 50% 50%;
 }
 #social-media .row .social-icon{
     padding:15%;
+}
+
+.modal-head{
+    font-size:2em;
+}
+.modal-content{
+    border:none;
+    padding:5%;
+}
+
+.modal-activity{
+    text-align: left;
+}
+.modal-activity span{
+    margin-left:2%;
+    margin-right:2%;
+}
+.modal-activity span:hover{
+    color:blue;
+}
+.modal-author{
+    text-align: right;
+}
+#search-box{
+ text-align: end;
+ transition: transform 300ms;
+}
+#search-text{
+    width:25%;
+    border:1px solid blue;
+    border-radius: 50px;
+    
+}
+input{
+    padding-left:5px;
+}
+input:focus{
+    outline:none;
+}
+#search-box:hover{
+    transform: scale(1.1);
+    /*box-shadow:0 4px 10px rgba(0,0,0,0.9);*/
+}
+.search-icon{
+    padding-left:5px;
+    color:blue;
+}
+#search{
+    margin-top: 5%;
+    margin-bottom:5%;
 }

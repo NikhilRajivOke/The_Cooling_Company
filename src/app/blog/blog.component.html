@@ -22,25 +22,31 @@
 </head>
 
 <body>
-
-    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-img">
-                <div class="modal-head">{{modalData.blog_head}}</div>
-                <img src="{{modalData.img}}" alt="modal-img">
+    <section id="modal-view">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <p>{{modalData.blog_content}}</p>
-                </div>
-                
-                <div class="modal-author">
-                    {{modalData.author}}
-                    {{modalData.post}}
+                    <div class="modal-head">{{modalData.blog_head}}</div>
+
+                    <img src="{{modalData.img}}" class="img-fluid" alt="modal-img">
+
+                    <div class="modal-content">
+                        <p>{{modalData.blog_content}}</p>
+                    </div>
+                    <div class="modal-activity">
+                        <span class="far fa-thumbs-up fa-lg"></span>
+                        <span class="far fa-paper-plane fa-lg"></span>
+                    </div>
+                    <div class="modal-author">
+                        {{modalData.author}}
+                        {{modalData.post}}
+                    </div>
+
                 </div>
             </div>
-          </div>
         </div>
-      </div>
+    </section>
     <div class="container-fluid">
         <div class="blog-header">
             <div class="header-background">
@@ -80,6 +86,12 @@
             </div>
         </div>
     </div>
+    <section id="search" class="container">
+        <form action="" id="search-box">
+            <input type="text" id="search-text" placeholder="  Search Blogs...">
+            <span class="fas fa-search search-icon"></span>
+        </form>
+    </section>
     <div class="container-fluid sub-blogs">
         <div class="row mx-auto">
             <div class="col-md-4" *ngFor='let blog of blogData | slice:0:3'>
@@ -87,7 +99,8 @@
                     <div class="img-contain"><img src='{{blog.img}}' alt="blog image" class="img-fluid blog-img"></div>
                     <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
                     <div class="blog-content">{{blog.blog_content}}</div>
-                    <button type="button" class="btn btn-primary .btn-more" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
+                    <button type="button" class="btn btn-primary .btn-more" data-toggle="modal"
+                        data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
                     <hr>
                     <div class="blog-author">{{blog.author}}</div>
                     <p>{{blog.post}}</p>
@@ -107,7 +120,8 @@
                         </div>
                         <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
                         <div class="blog-content">{{blog.blog_content}}</div>
-                        <button type="button" class="btn btn-primary .btn-more" data-toggle="modal" data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
+                        <button type="button" class="btn btn-primary .btn-more" data-toggle="modal"
+                            data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
                         <hr>
                         <div class="blog-author">{{blog.author}}</div>
                         <p>{{blog.post}}</p>
