@@ -27,7 +27,7 @@
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-head">{{modalData.blog_head}}</div>
+                    <p class="modal-head">{{modalData.blog_head}}</p>
 
                     <img src="{{modalData.img}}" class="img-fluid" alt="modal-img">
 
@@ -87,7 +87,7 @@
         </div>
     </div>
     <section id="search" class="container">
-        <form action="" id="search-box">
+        <form [formGroup]="" id="search-box">
             <input type="text" id="search-text" placeholder="  Search Blogs...">
             <span class="fas fa-search search-icon"></span>
         </form>
