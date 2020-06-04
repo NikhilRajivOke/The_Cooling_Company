@@ -1,0 +1,26 @@
+<section id="add-blog">
+    <div class="container">
+        <form [formGroup]="addblog" (ngSubmit)="addSubmit()">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="media">
+                    <div class="img_video-display">
+                        <img id="img-display" src="" class="img-fluid img-mod">
+                        <video id="vid-display" src="" autoplay loop playsinline controls></video>
+                    </div>
+                    <div class="fileinput">
+                    <input type="file" id="media" (change)="handleInput($event)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="blog-content">
+                    <input type="text" formControlName="bloghead" placeholder="Enter Blog Head">
+                    <textarea placeholder="Blog body goes here" formControlName="blogbody"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-add">Add Blog</button>
+        </div>
+        </form>
+    </div>
+</section>
