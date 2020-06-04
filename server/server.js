@@ -18,13 +18,13 @@ var BlogsSchema = mongoose.Schema({
 
 var Blogs = mongoose.model("Blogs",BlogsSchema);
 const OAuth2Client = new OAuth2(
-    "250449147186-sjrgmgr7dfq9u9k7u0ol411674t6badc.apps.googleusercontent.com",
-    "jKOO2THRVatD66iAG8w8-6DJ",
-    "https://developers.google.com/oauthplayground"
+    process.env.API_OAUTH2_KEY,
+    process.env.API_OAUTH2_PASS,
+    process.env.API_OAUTH2_LINK,
 );
 
 OAuth2Client.setCredentials({
-    refresh_token: "1//04PrwV0bIXYTxCgYIARAAGAQSNwF-L9IrBEEVuwHUCUo6k0K3_kC5DW8sabRjSufcVllH2OBMxA-Cw7U_2cbEZEI9GWPWgvBu260",
+    refresh_token: process.env.API_REFERESH,
 });
 
 const access_token = OAuth2Client.getAccessToken();
