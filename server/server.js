@@ -1,11 +1,13 @@
 var express = require('express');
+require('dotenv').config();
 var app = new express();
 var mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
-const dburl = "mongodb://localhost:27017/thecoolcomp";
+/*console.log(process.env);*/
+const dburl = process.env.DB_URL;
 var Schema = mongoose.Schema;
 var BlogsSchema = mongoose.Schema({
     media:String,
@@ -41,9 +43,9 @@ const smtpTransport = nodemailer.createTransport({
     auth: {
         type: "OAuth2",
         user: "thecoolcompmailer@gmail.com",
-        clientId: "250449147186-nc5r239p838v4bu580kbtp55kbku93jq.apps.googleusercontent.com",
-        clientSecret: "O8lTjxezIeBqbhqDQf0X41Yp",
-        refreshToken: "1//042wRsrS2my-TCgYIARAAGAQSNgF-L9IrGG0RiWEycDI4yXIeMCGuBmHdihtG6_DKEzYMcmA3oJ0s0ASw1o9bwzpcHeLjoDjmMA",
+        clientId: process.env.API_KEY,
+        clientSecret: process.env.API_PASS,
+        refreshToken: process.env.API_REFERESH,
         accessToken: access_token
     }
 });
@@ -89,9 +91,7 @@ app.post('/blog',(req,res)=>{
         bloghead:blog_head,
         blogbody:blog_body,
     });
-    /*console.log(blog_media);
-    console.log(blog_head);
-    console.log(blog_body);*/
+
     mongoose.connect(dburl,(err)=>{
         if(err){
            res.json({msg:err});
