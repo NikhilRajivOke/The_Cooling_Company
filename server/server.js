@@ -5,16 +5,6 @@ const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
-const dburl = "mongodb://localhost:27017/thecoolcomp";
-var Schema = mongoose.Schema;
-var BlogsSchema = mongoose.Schema({
-    media:String,
-    bloghead:String,
-    blogbody:String,
-
-},{"collection":"blogs"});
-
-var Blogs = mongoose.model("Blogs",BlogsSchema);
 const OAuth2Client = new OAuth2(
     "250449147186-sjrgmgr7dfq9u9k7u0ol411674t6badc.apps.googleusercontent.com",
     "jKOO2THRVatD66iAG8w8-6DJ",
@@ -48,7 +38,6 @@ const smtpTransport = nodemailer.createTransport({
     }
 });
 
-
 app.post('/cus', (req, res) => {
     console.log("Backend Connected");
     var name = req.body.name;
@@ -76,68 +65,14 @@ app.post('/cus', (req, res) => {
             smtpTransport.close();
         })
     });
-
+    /*smtpTransport.sendMail(mailOptionsOwner, (error, response) => {
+    error ? console.log(error) : owner=true ;
+    smtpTransport.close();
 });
-
-app.post('/blog',(req,res)=>{
-    const blog_media=req.body.media;
-    const blog_head=req.body.blog_data.bloghead;
-    const blog_body=req.body.blog_data.blogbody;
-
-    let blogdata = new Blogs({
-        media:blog_media,
-        bloghead:blog_head,
-        blogbody:blog_body,
-    });
-    /*console.log(blog_media);
-    console.log(blog_head);
-    console.log(blog_body);*/
-    mongoose.connect(dburl,(err)=>{
-        if(err){
-           res.json({msg:err});
-           console.log("Failed");
-        }
-        else
-        {
-            console.log("DB connected");
-            blogdata.save((err,doc)=>{
-                if(err){
-                    res.json({"msg":"Error adding data"});
-                }
-                else
-                {
-                    //console.log(doc);
-                    res.json({"status":200,"msg":"added successfully"});
-                }
-            
-            })
-        }
-    })
-    //res.json({msg:"received data"});
+console.log(client , owner);
+    if(client && owner)
+    {res.json({"msg":"Both mail sent succesfully"});}
+});*/
 });
-
-app.get('/getBlogdata',(req,res)=>{
-    mongoose.connect(dburl,(err)=>{
-        if(err){
-            console.log("Connection error");
-        }
-        else
-        {
-            Blogs.find({},(err,doc)=>{
-                if(err)
-                {
-                    res.json({"status":500,"msg":err});
-                }
-                else
-                {
-                    //console.log(doc);
-                    res.json({status:200,"msg":doc});
-                }
-            });
-
-            
-        }
-    })
-})
     app.listen(4004, () => console.log("Server listening on port 4004"));
 

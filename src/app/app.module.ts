@@ -15,7 +15,6 @@ import { ProductsComponent } from './products/products.component';
 import { Products1Component } from './products1/products1.component';
 import { Products2Component } from './products2/products2.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { AddBlogComponent } from './add-blog/add-blog.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +26,7 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
     ProductsComponent,
     Products1Component,
     Products2Component,
-    ContactusComponent,
-    AddBlogComponent
+    ContactusComponent
 
   ],
   imports: [
@@ -46,9 +44,6 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
       },
       {
         path:"contactus",component:ContactusComponent
-      },
-      {
-        path:"add-blog",component:AddBlogComponent
       },
       
     ])

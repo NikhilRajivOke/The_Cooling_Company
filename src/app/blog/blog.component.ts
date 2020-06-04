@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
-import { BlogService } from '../../services/blog-service';
 import * as $ from 'jquery';
-import { Router } from '@angular/router';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -10,40 +7,56 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
   modalData:any;
-  constructor(private router : Router,private ser:BlogService) { }
+  constructor() { }
   modalUpdate(data:any){
     this.modalData=data;
     console.log(this.modalData);
   }
-
-  Login = new FormGroup({
-    user_id:new FormControl(),
-    password : new FormControl(),
-  });
-  blogData=[];
-   
-  LoginSubmit(){
-    
-    if(this.Login.value.user_id == "Kiran" && this.Login.value.password=="thecoolingcompany")
-      {
-        
-        this.router.navigate(['/add-blog'])}
-      else{
-        alert("Invalid User !!");
-      }
-    
-  }
-
-  getBlogData(){
-    this.ser.getBlogData().subscribe((resp:{status:number,msg:any})=>{
-        if(resp.status==200){
-            this.blogData = resp.msg;
-            console.log(this.blogData);
-        }
-    });
-  }
+  blogData = [
+    {
+      img: "../../assets/blog1.jpg",
+      blog_head: "Blog Head2",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    },
+    {
+      img: "../../assets/blog2.jpg",
+      blog_head: "Blog Head3",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    },
+    {
+      img: "../../assets/blog3.jpg",
+      blog_head: "Blog Head4",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    },
+    {
+      img: "../../assets/blog4.jpg",
+      blog_head: "Blog Head5",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    },
+    {
+      img: "../../assets/blog5.jpg",
+      blog_head: "Blog Head6",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    },
+    {
+      img: "../../assets/blog6.jpg",
+      blog_head: "Blog Head7",
+      blog_content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in',
+      author:'Kiran Sapali',
+      post:'CEO,The Cooling Company'
+    }
+  ]
   ngOnInit() {
-    this.getBlogData();
     $(document).ready(function () {
 
       $('#our_story').stop(true).animate({ left: "30%" }, 3000);
@@ -63,7 +76,7 @@ export class BlogComponent implements OnInit {
         $('#close-blog').hide();
         $('#hidden-blogs').fadeOut("fast");
         $('#view-blogs').show();
-      });
+      })
     });
   }
 
