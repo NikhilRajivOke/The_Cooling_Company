@@ -232,36 +232,3 @@ input:focus{
     margin-top: 5%;
     margin-bottom:5%;
 }
-.floating-btn{
-    display:flex;
-    position:fixed;
-    right:10px;
-    bottom:20px;
-    background-color:rgba(10, 107, 233, 0.623);
-    color:white;
-    border:none;
-    padding:1.5%;
-    border-radius:50%;
-    z-index:2;
-    transition: transform 300ms;
-    outline:0;
-}
-.floating-btn:hover{
-    background-color:rgb(10, 43, 233);
-    box-shadow: 2px 4px 5px rgba(0,0,0,0.7);
-    transform:scale(1.1);
-}
-
-.form-field{
-    text-align: center;
-    justify-content: center;
-    text-align: justify;
-    border:none;
-    margin:2%;
-}
-.form-input{
-    margin:2%;
-}
-.btn-form{
-    margin:3%;
-}
