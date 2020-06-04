@@ -6,8 +6,6 @@ const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 
-
-/*console.log(process.env);*/
 const dburl = process.env.DB_URL;
 var Schema = mongoose.Schema;
 var BlogsSchema = mongoose.Schema({
@@ -18,7 +16,6 @@ var BlogsSchema = mongoose.Schema({
 },{"collection":"blogs"});
 
 var Blogs = mongoose.model("Blogs",BlogsSchema);
-
 const OAuth2Client = new OAuth2(
     process.env.API_OAUTH2_KEY,
     process.env.API_OAUTH2_PASS,
@@ -26,7 +23,7 @@ const OAuth2Client = new OAuth2(
 );
 
 OAuth2Client.setCredentials({
-    refresh_token: process.env.API_REFERESH,
+    refresh_token: "1//04PrwV0bIXYTxCgYIARAAGAQSNwF-L9IrBEEVuwHUCUo6k0K3_kC5DW8sabRjSufcVllH2OBMxA-Cw7U_2cbEZEI9GWPWgvBu260",
 });
 
 const access_token = OAuth2Client.getAccessToken();
@@ -44,13 +41,14 @@ const smtpTransport = nodemailer.createTransport({
     service: "gmail",
     auth: {
         type: "OAuth2",
-        user: "thecoolcompmailer@gmail.com",
+        user: process.env.API_USER,
         clientId: process.env.API_KEY,
         clientSecret: process.env.API_PASS,
         refreshToken: process.env.API_REFERESH,
         accessToken: access_token
     }
 });
+
 
 app.post('/cus', (req, res) => {
     console.log("Backend Connected");
@@ -79,11 +77,8 @@ app.post('/cus', (req, res) => {
             smtpTransport.close();
         })
     });
-    /*smtpTransport.sendMail(mailOptionsOwner, (error, response) => {
-    error ? console.log(error) : owner=true ;
-    smtpTransport.close();
-});
 
+});
 
 app.post('/blog',(req,res)=>{
     const blog_media=req.body.media;
@@ -95,7 +90,9 @@ app.post('/blog',(req,res)=>{
         bloghead:blog_head,
         blogbody:blog_body,
     });
-
+    /*console.log(blog_media);
+    console.log(blog_head);
+    console.log(blog_body);*/
     mongoose.connect(dburl,(err)=>{
         if(err){
            res.json({msg:err});
@@ -118,7 +115,30 @@ app.post('/blog',(req,res)=>{
         }
     })
     //res.json({msg:"received data"});
-
 });
+
+app.get('/getBlogdata',(req,res)=>{
+    mongoose.connect(dburl,(err)=>{
+        if(err){
+            console.log("Connection error");
+        }
+        else
+        {
+            Blogs.find({},(err,doc)=>{
+                if(err)
+                {
+                    res.json({"status":500,"msg":err});
+                }
+                else
+                {
+                    //console.log(doc);
+                    res.json({status:200,"msg":doc});
+                }
+            });
+
+            
+        }
+    })
+})
     app.listen(4004, () => console.log("Server listening on port 4004"));
 
