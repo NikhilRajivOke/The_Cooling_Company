@@ -22,7 +22,7 @@ export class AddBlogComponent implements OnInit {
 
       reader.onload = (event) =>{
         this.url = reader.result;
-        
+
       }
     }
    }
@@ -37,14 +37,14 @@ export class AddBlogComponent implements OnInit {
       }
     });
   }
- 
+
   constructor(private ser : BlogService) { }
 
   ngOnInit() {
-   
+
     $('#media').change(function(event){
       var tmppath = URL.createObjectURL(<HTMLElement>event.target.files[0]);
-      
+
       if((event.target.files[0].name).includes('.mp4')){
         console.log("video");
         $("#img-display").hide();

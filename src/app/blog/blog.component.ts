@@ -3,6 +3,7 @@ import { FormGroup,FormControl } from '@angular/forms';
 import { BlogService } from '../../services/blog-service';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -15,23 +16,22 @@ export class BlogComponent implements OnInit {
     this.modalData=data;
     console.log(this.modalData);
   }
-
   Login = new FormGroup({
     user_id:new FormControl(),
     password : new FormControl(),
   });
   blogData=[];
-   
+
   LoginSubmit(){
-    
+
     if(this.Login.value.user_id == "Kiran" && this.Login.value.password=="thecoolingcompany")
       {
-        
+
         this.router.navigate(['/add-blog'])}
       else{
         alert("Invalid User !!");
       }
-    
+
   }
 
   getBlogData(){

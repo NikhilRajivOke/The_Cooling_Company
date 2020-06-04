@@ -18,3 +18,4 @@ export class BlogService {
         return this.http.get("http://localhost:4004/getBlogData");
     }
 }
+

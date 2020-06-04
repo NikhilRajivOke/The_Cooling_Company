@@ -49,8 +49,7 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
       },
       {
         path:"add-blog",component:AddBlogComponent
-      },
-      
+      }
     ])
   ],
   providers: [],
