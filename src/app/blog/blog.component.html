@@ -22,25 +22,52 @@
 </head>
 
 <body>
+    <button class="floating-btn" id="fltn-btn" data-toggle="modal" data-target="#LoginModalCenter"><i
+        class="fas fa-pen fa-2x"></i></button>
+<section id="modal-dialoug">
+    <div class="modal fade" id="LoginModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="form-Login" [formGroup]="Login">
+                        <input type="text" class="form-input" placeholder="Enter user Id" formControlName="user_id">
+                        <br/>
+                        <input type="password" class="form-input" placeholder="Enter Password" formControlName="password">
+                        <br/>
+                        <button type="button" class="btn btn-secondary btn-form" data-dismiss="modal">Close</button>
+                        <button type="submit" (click)="LoginSubmit()" class="btn btn-primary btn-form" data-dismiss="modal">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <section id="modal-view">
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <p class="modal-head">{{modalData.blog_head}}</p>
+                    <p class="modal-head">{{modalData?.bloghead}}</p>
 
-                    <img src="{{modalData.img}}" class="img-fluid" alt="modal-img">
+                    <img src="{{modalData?.media}}" class="img-fluid" alt="modal-img">
 
                     <div class="modal-content">
-                        <p>{{modalData.blog_content}}</p>
+                        <p>{{modalData?.blogbody}}</p>
                     </div>
                     <div class="modal-activity">
                         <span class="far fa-thumbs-up fa-lg"></span>
                         <span class="far fa-paper-plane fa-lg"></span>
                     </div>
                     <div class="modal-author">
-                        {{modalData.author}}
-                        {{modalData.post}}
+                        Kiran Sapali
+                        CEO,The Cooling Company
                     </div>
 
                 </div>
@@ -96,14 +123,14 @@
         <div class="row mx-auto">
             <div class="col-md-4" *ngFor='let blog of blogData | slice:0:3'>
                 <div class="card">
-                    <div class="img-contain"><img src='{{blog.img}}' alt="blog image" class="img-fluid blog-img"></div>
-                    <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
-                    <div class="blog-content">{{blog.blog_content}}</div>
+                    <div class="img-contain"><img src='{{blog?.media}}' alt="blog image" class="img-fluid blog-img"></div>
+                    <div style="font-size: 2em;text-align: center;">{{blog.bloghead}}</div>
+                    <div class="blog-content">{{blog.blogbody}}</div>
                     <button type="button" class="btn btn-primary .btn-more" data-toggle="modal"
                         data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
                     <hr>
-                    <div class="blog-author">{{blog.author}}</div>
-                    <p>{{blog.post}}</p>
+                    <div class="blog-author">Kiran Sapali</div>
+                    <p>CEO,The Cooling Company</p>
                 </div>
             </div>
         </div>
@@ -116,15 +143,15 @@
             <div class="row mx-auto">
                 <div class="col-md-4" *ngFor='let blog of blogData | slice:3:7'>
                     <div class="card">
-                        <div class="img-contain"><img src='{{blog.img}}' alt="blog image" class="img-fluid blog-img">
+                        <div class="img-contain"><img src='{{blog?.media}}' alt="blog image" class="img-fluid blog-img">
                         </div>
-                        <div style="font-size: 2em;text-align: center;">{{blog.blog_head}}</div>
-                        <div class="blog-content">{{blog.blog_content}}</div>
+                        <div style="font-size: 2em;text-align: center;">{{blog?.bloghead}}</div>
+                        <div class="blog-content">{{blog.blogbody}}</div>
                         <button type="button" class="btn btn-primary .btn-more" data-toggle="modal"
                             data-target=".bd-example-modal-lg" (click)="modalUpdate(blog)">Read More</button>
                         <hr>
-                        <div class="blog-author">{{blog.author}}</div>
-                        <p>{{blog.post}}</p>
+                        <div class="blog-author">Kiran Sapali</div>
+                        <p>CEO,The Cooling Company</p>
                     </div>
                 </div>
             </div>

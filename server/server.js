@@ -23,7 +23,7 @@ const OAuth2Client = new OAuth2(
 );
 
 OAuth2Client.setCredentials({
-    refresh_token: "1//04PrwV0bIXYTxCgYIARAAGAQSNwF-L9IrBEEVuwHUCUo6k0K3_kC5DW8sabRjSufcVllH2OBMxA-Cw7U_2cbEZEI9GWPWgvBu260",
+    refresh_token: process.env.API_REFRESH,
 });
 
 const access_token = OAuth2Client.getAccessToken();
@@ -44,7 +44,7 @@ const smtpTransport = nodemailer.createTransport({
         user: process.env.API_USER,
         clientId: process.env.API_KEY,
         clientSecret: process.env.API_PASS,
-        refreshToken: process.env.API_REFERESH,
+        refreshToken: process.env.API_REFRESH,
         accessToken: access_token
     }
 });

@@ -47,7 +47,9 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
       {
         path:"contactus",component:ContactusComponent
       },
-      
+      {
+        path:"add-blog",component:AddBlogComponent
+      }
     ])
   ],
   providers: [],

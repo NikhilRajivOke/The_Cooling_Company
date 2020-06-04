@@ -1,0 +1,58 @@
+.row{
+    justify-content: center;
+.media{
+    display:block;
+
+    .img_video-display{
+
+        width:100%;
+        /*height:300px;*/
+        border:1px solid lightgrey;
+    }
+    #vid-display{
+            width:100%;
+            height:100%;
+            object-fit: fill;
+            border:1px solid white;
+    }
+    .fileinput{
+       margin-top: 2%;
+    }
+}
+.blog-content{
+    display:block;
+    input{
+        width:100%;
+        border:none;
+        border-bottom: 1px solid black;
+        margin:2%;
+        outline: none;
+
+        &:focus{
+            border-bottom:2px solid blue;
+        }
+    }
+
+    textarea{
+        resize: none;
+        height:250px;
+        width:100%;
+        outline:none;
+
+        &:focus{
+            border:2px solid blue;
+        }
+    }
+
+}
+
+.btn-add{
+
+    border:1px solid blue;
+
+    &:hover{
+        background-color: blue;
+        color:white;
+    }
+}
+} 
