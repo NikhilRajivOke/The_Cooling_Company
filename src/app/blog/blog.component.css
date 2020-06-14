@@ -32,7 +32,7 @@ body{
 }
 #blog{
     padding:0;
-    margin-top: 5%;;
+    margin-top:3%;
     margin-bottom: 3%;
     box-shadow:0px 0px 10px 0 rgba(0,0,0,0.9);
 }
@@ -264,4 +264,90 @@ input:focus{
 }
 .btn-form{
     margin:3%;
+}
+
+.container{
+    /*background-color:black;*/
+    
+    margin:5vh auto 0;
+    padding:0.5em;
+  
+ 
+}
+#blog-view{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    margin:5vw;
+    /*background-color:blue;*/
+    /*align-content: center;**/
+}
+.item{
+    background-color:rgb(242,245,248);
+    color:black; 
+     
+    padding: 5vh;
+    /*width:40vw;*/
+   
+}
+
+.one{
+background-color: black;
+color:white;
+/*flex:2 1 60vw;*/
+width:35vw;
+transition: transform 300ms;
+}
+.one:hover{
+transform: scale(1.1);
+box-shadow: 0px 8px 12px rgba(15, 15, 15, 0.623);
+}
+.two{
+   /* flex:0 1 40vw;*/
+   transition:transform 300ms;
+   width:30vw;
+}
+.two:hover{
+transform: scale(1.1);
+box-shadow: 0px 8px 12px rgba(15, 15, 15, 0.623);
+}
+
+#blog-view .img-contain{
+    display: inline-block;
+    overflow: hidden;
+    
+}
+#blog-view img{ 
+    display: block;
+    transition: transform .4s;
+}
+#blog-view img:hover{
+    transform:scale(1.3);
+    transform-origin: 50% 50%;
+}
+#blog-view .blog-content{
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height:7.5em;
+    padding:5% 5% 0% 5%;
+    text-align: justify;
+}
+.btn-more{
+    margin-top:2vh;
+    color:white;
+    background-color: rgb(45, 45, 185);
+}
+.btn-more:hover{
+    color:blue;
+    background-color: white;
+}
+.btn-two{
+    margin-top:2vh;
+    color:white;
+    background-color:rgb(45, 45, 185);
+}
+.btn-two:hover{
+    background-color:black
 }

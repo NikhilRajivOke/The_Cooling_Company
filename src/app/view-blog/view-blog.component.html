@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="blogstart">
+        <div class="blog-head">
+            <p class="heading">{{initBlog.bloghead}}</p>
+        </div>
+        <div class="sub-titles">
+            <div *ngFor="let topic of topics">
+                <p class="subtitles">{{topic?.topic}}</p>
+            </div>
+        </div>
+        <div class="author">
+            <div>
+                <img src="../../assets/user.jpg" class="img-fluid" width="100px" height="100px">
+            </div>
+            <div>
+                <div class="author-name">Kiran Sapali</div>
+                <div class="post">CEO,The Cooling company</div>
+            </div>
+        </div>
+    </div>
+    <div class="blogbody">
+        <div class="blogread">
+            <img src="{{initBlog.media}}" class="img-fluid">
+            <p class="blogbody">
+                {{initBlog.blogbody}}
+            </p>
+        </div>
+        <div class="newsletter">
+            <div class="subscription">
+                <p>Join Our Community !</p>
+                <form [formGroup]="Subscription" (ngSubmit)="Subscribe()">
+                    <span class="far fa-envelope"></span>
+                    <br />
+                    <input type="email" placeholder="email id" formControlName="email" required>
+                    <br />
+                    <div class="btn-deco">
+                        <button type="submit" class="btn btn-sub">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="moreblogs">
+                <p id="head">Popular Blogs</p>
+                <div class="blogview">
+                    <ul>
+                        <li *ngFor="let blog of Blogs">
+                            <div class="bloglist" (click)="ChangeBlog(blog)">
+                                <img src="{{blog?.media}}" width="50px" height="50px">
+                                <p>{{blog.bloghead}}</p>
+                            </div>
+                            <hr>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <p id="follow">Follow Us !!</p>
+    <div class="social">
+        <div class="facebook">
+            <span class="fab fa-facebook-f fa-3x"></span>
+        </div>
+        <div class="twitter">
+            <span class="fab fa-twitter fa-3x"></span>
+        </div>
+        <div class="youtube">
+            <span class="fab fa-youtube fa-3x"></span>
+        </div>
+    </div>
+</div>

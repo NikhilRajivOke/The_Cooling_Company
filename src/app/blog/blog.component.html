@@ -17,10 +17,22 @@
             #blog video {
                 padding-right: 0;
             }
+
+            .one {
+                width: 90vw;
+            }
+
+            .two {
+                width: 90vw;
+            }
+
+            body {
+                overflow: hidden;
+            }
         }
     </style>
 </head>
-
+<!--
 <body>
     <button class="floating-btn" id="fltn-btn" data-toggle="modal" data-target="#LoginModalCenter"><i
         class="fas fa-pen fa-2x"></i></button>
@@ -83,42 +95,44 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="blog" class="container">
-        <div class="row mx-auto">
-            <div class="col-md-6" style="padding: 0;">
-                <video src="../../assets/videos/Blog-vid.mp4" [muted]="true" controls autoplay playsinline loop></video>
-            </div>
-            <div class="col-md-6">
-                <div class="blog-content">
-                    <div class="blog-data">
-                        <p class="blog-heading">Blog head1</p>
-                        <hr>
-                        <div class="blog-body">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                        </div>
-                        <hr>
-                        <div class="blog-author">
-                            <div class="author-name">-Kiran Sapali</div>
-                            <div class="position">CEO,The Cooling Company</div>
-                        </div>
+    </div>-->
+<section id="search" class="container">
+    <form [formGroup]="" id="search-box">
+        <input type="text" id="search-text" placeholder="  Search Blogs...">
+        <span class="fas fa-search search-icon"></span>
+    </form>
+</section>
+<div id="blog" class="container con-adj">
+    <div class="row mx-auto">
+        <div class="col-md-6" style="padding: 0;">
+            <video src="../../assets/videos/Blog-vid.mp4" [muted]="true" controls autoplay playsinline loop></video>
+        </div>
+        <div class="col-md-6">
+            <div class="blog-content">
+                <div class="blog-data">
+                    <p class="blog-heading">Blog head1</p>
+                    <hr>
+                    <div class="blog-body">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                            has been the industry's standard dummy text ever since the 1500s, when an unknown
+                            printer took a galley of type and scrambled it to make a type specimen book. It has
+                            survived not only five centuries, but also the leap into electronic typesetting,
+                            remaining essentially unchanged. It was popularised in the 1960s with the release of
+                            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                            publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <hr>
+                    <div class="blog-author">
+                        <div class="author-name">-Kiran Sapali</div>
+                        <div class="position">CEO,The Cooling Company</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <section id="search" class="container">
-        <form [formGroup]="" id="search-box">
-            <input type="text" id="search-text" placeholder="  Search Blogs...">
-            <span class="fas fa-search search-icon"></span>
-        </form>
-    </section>
+</div>
+
+<!--
     <div class="container-fluid sub-blogs">
         <div class="row mx-auto">
             <div class="col-md-4" *ngFor='let blog of blogData | slice:0:3'>
@@ -195,4 +209,38 @@
             </div>
         </div>
     </section>
-</body>
+</body>-->
+
+
+<div class="container">
+    <div *ngIf="flag">
+        <div *ngFor='let blog of blogData ; let i = index;let even = even'>
+            <div *ngIf=even>
+                {{changeCss()}}
+                <span id="blog-view">
+                    <div>
+                    <div class="item one">
+                        <div class="img-contain"><img src='{{blog?.media}}' alt="blog image" class="img-fluid blog-img">
+                        </div>
+                        <div style="font-size: 2em;text-align: center;">{{blog?.bloghead}}</div>
+                        <div class="blog-content">{{blog.blogbody}}</div>
+                        <button type="button" class="btn btn-more" data-toggle="modal"
+                            data-target=".bd-example-modal-lg" (click)="showBlog(blog)">Read More</button>
+                    </div>
+                   </div>
+                    <div>
+                        <div class="item two">
+                            <div class="img-contain"><img src='{{blogData[i+1]?.media}}' alt="blog image"
+                                    class="img-fluid blog-img">
+                            </div>
+                            <div style="font-size: 2em;text-align: center;">{{blogData[i+1]?.bloghead}}</div>
+                            <div class="blog-content">{{blogData[i+1].blogbody}}</div>
+                            <button type="button" class="btn btn-two" data-toggle="modal"
+                                data-target=".bd-example-modal-lg" (click)="showBlog(blogData[i+1])">Read More</button>
+                        </div>
+                    </div>
+                </span>
+            </div>           
+        </div>
+    </div>
+</div>

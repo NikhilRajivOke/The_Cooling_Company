@@ -1,27 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import { BlogService } from '../../services/blog-service';
 import * as $ from 'jquery';
 import { Router } from '@angular/router';
 
 @Component({
+
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
   modalData:any;
+  flag:number=1;
+  switch=true;
   constructor(private router : Router,private ser:BlogService) { }
   modalUpdate(data:any){
     this.modalData=data;
-    console.log(this.modalData);
-  }
+      }
   Login = new FormGroup({
     user_id:new FormControl(),
     password : new FormControl(),
   });
   blogData=[];
-
+  flagVal(){
+    
+    this.flag += 1;
+    
+  }
   LoginSubmit(){
 
     if(this.Login.value.user_id == "Kiran" && this.Login.value.password=="thecoolingcompany")
@@ -38,9 +44,13 @@ export class BlogComponent implements OnInit {
     this.ser.getBlogData().subscribe((resp:{status:number,msg:any})=>{
         if(resp.status==200){
             this.blogData = resp.msg;
-            console.log(this.blogData);
+           /*console.log(this.blogData);*/
         }
     });
+  }
+
+  showBlog(blogData){
+    this.router.navigate(['/view-blog',blogData.bloghead]);
   }
   ngOnInit() {
     this.getBlogData();
@@ -65,6 +75,24 @@ export class BlogComponent implements OnInit {
         $('#view-blogs').show();
       });
     });
+  }
+
+  changeCss(){
+    if(this.switch==true){
+    $('#blog-view').css('flex-direction','row');
+    
+    this.switch=false;
+    
+    }
+    else{
+      $('#blog-view').css('flex-direction','row-reverse');
+      
+      this.switch=true;
+      
+    }
+  }
+  ngAfterViewInit(){
+    
   }
 
 }

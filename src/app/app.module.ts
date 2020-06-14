@@ -16,6 +16,7 @@ import { Products1Component } from './products1/products1.component';
 import { Products2Component } from './products2/products2.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AddBlogComponent } from './add-blog/add-blog.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
     Products1Component,
     Products2Component,
     ContactusComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    ViewBlogComponent
 
   ],
   imports: [
@@ -49,6 +51,9 @@ import { AddBlogComponent } from './add-blog/add-blog.component';
       },
       {
         path:"add-blog",component:AddBlogComponent
+      },
+      {
+        path:"view-blog/:blogData",component:ViewBlogComponent
       }
     ])
   ],

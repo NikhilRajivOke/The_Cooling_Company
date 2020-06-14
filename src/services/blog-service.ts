@@ -17,5 +17,13 @@ export class BlogService {
     getBlogData(){
         return this.http.get("http://localhost:4004/getBlogData");
     }
+    getInitBlog(head){
+        return this.http.get("http://localhost:4004/initBlog/"+head);
+    }
+    addSubscriber(data)
+    {
+        //console.log(data);
+        return this.http.post("http://localhost:4004"+"/addsubscriber",data);
+    }
 }
 

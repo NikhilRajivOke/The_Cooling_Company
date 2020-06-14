@@ -131,7 +131,6 @@ app.get('/getBlogdata',(req,res)=>{
                 }
                 else
                 {
-                    //console.log(doc);
                     res.json({status:200,"msg":doc});
                 }
             });
@@ -139,6 +138,45 @@ app.get('/getBlogdata',(req,res)=>{
             
         }
     })
-})
+});
+
+app.get('/initBlog/:head',(req,res)=>{
+     const head=req.params.head;
+     console.log("Head value : ", head)
+     mongoose.connect(dburl,(err)=>{
+         if(err){
+             res.json({status:500,msg:"Cant Connect to DB"});
+         }
+         else{
+             Blogs.find({bloghead:head},(err,doc)=>{
+                 if(err){
+                     console.log(err);
+                 }
+                 else
+                 {
+                    res.json({status:200,data:doc[0]});
+                 }
+             })
+         }
+     })
+    
+});
+app.post('/addsubscriber',(req,res)=>{
+    console.log("Function called");
+    const email = req.body.email;
+    const mailSubscribe = {
+        from: "thecoolcompmailer@gmail.com",
+        to: email,
+        subject: "Subscription",
+        generateTextFromHTML: true,
+        html: "<p>Hi,<br/><br/>Thanks For Subscribing to our Blogs !!<br/> Thanks and Regards ,<br/>The Cooling Company</p>",
+    }
+    smtpTransport.sendMail(mailSubscribe, (error, response) => {
+        error ? res.json({status:404,msg:error}) : res.json({status:200,msg:"Thanks for subscribing!"})
+           
+            smtpTransport.close();
+    });
+    
+});
     app.listen(4004, () => console.log("Server listening on port 4004"));
 
