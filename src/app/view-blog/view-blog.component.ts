@@ -9,10 +9,10 @@ import { FormGroup , FormControl } from '@angular/forms';
 })
 export class ViewBlogComponent implements OnInit {
 
-  head:string
+  blogid:string
   sub: any;
   data:any;
-  initBlog=[];
+  initBlog:any;
   Blogs:any;
   topics=[{
     topic:"Demo1"
@@ -36,31 +36,42 @@ Subscribe(){
   });
 }
 getBlogData(){
-  this.ser.getBlogData().subscribe((resp:{status:number,msg:String})=>{
+  this.ser.getBlogData().subscribe((resp:{status:number,data:any})=>{
     if(resp.status==200){
-      this.Blogs=resp.msg;
+      this.Blogs=JSON.parse(resp.data).items;
     }
-  })
+});
+}
+getImageUrl(data:any){
+  const parser = new DOMParser();
+  const html = parser.parseFromString(data.content,'text/html');
+  const img = html.querySelector('img');
+  const url = img ? img.src : '';
+  return url;
 }
   constructor(private route:ActivatedRoute,private ser : BlogService) { }
-  getInitBlog(blog_head){
-    this.ser.getInitBlog(blog_head).subscribe((resp:{status:number,data:any})=>{
+  getInitBlog(blog_id){
+    /*this.ser.getInitBlog(blog_head).subscribe((resp:{status:number,data:any})=>{
       if(resp.status==200){
         this.initBlog=resp.data;
       }
-    });
-    
+    });*/
+    this.ser.getInitBlog(blog_id).subscribe((resp:{status:200,data:any})=>{
+      if(resp.status==200){
+       this.initBlog=JSON.parse(resp.data);
+      }
+      document.getElementById('bloginsert').innerHTML = this.initBlog.content;
+  });
   }
  ChangeBlog(data){
-   console.log("Function Called !!")
-   this.initBlog=data;
-   console.log(this.initBlog);
+   console.log("data id : ",data.id);
+    this.getInitBlog(data.id);
  }
   ngOnInit() {
     this.sub = this.route.params.subscribe(params=>{
-        this.head = params['blogData'];
+        this.blogid = params['blogData'];
     });
-    this.getInitBlog(this.head);
+    this.getInitBlog(this.blogid);
     this.getBlogData();
   }
 

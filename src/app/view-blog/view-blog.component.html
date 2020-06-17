@@ -1,7 +1,7 @@
 <div class="container">
     <div class="blogstart">
         <div class="blog-head">
-            <p class="heading">{{initBlog.bloghead}}</p>
+            <p class="heading">{{initBlog?.title}}</p>
         </div>
         <div class="sub-titles">
             <div *ngFor="let topic of topics">
@@ -19,11 +19,11 @@
         </div>
     </div>
     <div class="blogbody">
-        <div class="blogread">
-            <img src="{{initBlog.media}}" class="img-fluid">
+        <div class="blogread" id="bloginsert">
+            <!--<img src="{{initBlog.media}}" class="img-fluid">
             <p class="blogbody">
                 {{initBlog.blogbody}}
-            </p>
+            </p>-->
         </div>
         <div class="newsletter">
             <div class="subscription">
@@ -44,8 +44,8 @@
                     <ul>
                         <li *ngFor="let blog of Blogs">
                             <div class="bloglist" (click)="ChangeBlog(blog)">
-                                <img src="{{blog?.media}}" width="50px" height="50px">
-                                <p>{{blog.bloghead}}</p>
+                                <img [src]="getImageUrl(blog)" width="50px" height="50px">
+                                <p>{{blog.title}}</p>
                             </div>
                             <hr>
                         </li>

@@ -43,17 +43,17 @@ export class AddBlogComponent implements OnInit {
   ngOnInit() {
 
     $('#media').change(function(event){
-      var tmppath = URL.createObjectURL(<HTMLElement>event.target.files[0]);
+      var tmppath = URL.createObjectURL((<HTMLInputElement>event.target).files[0]);
 
-      if((event.target.files[0].name).includes('.mp4')){
+      if(((<HTMLInputElement>event.target).files[0].name).includes('.mp4')){
         console.log("video");
         $("#img-display").hide();
-        $("#vid-display").show().attr('src',URL.createObjectURL(event.target.files[0]));
+        $("#vid-display").show().attr('src',tmppath);
       }
       else
       {
         $("#vid-display").hide();
-        $("#img-display").show().attr('src',URL.createObjectURL(event.target.files[0]));
+        $("#img-display").show().attr('src',tmppath);
       }
     })
   }

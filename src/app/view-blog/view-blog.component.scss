@@ -1,3 +1,9 @@
+body{
+    overflow:hidden;
+    @media(max-width:576px){
+        overflow: hidden;
+    }
+}
 .blogstart{
     display: flex;
     flex-direction: column;
@@ -45,6 +51,7 @@
         flex-wrap: wrap;
     }
     .blogread{
+        padding:2vw;
     }
     .newsletter{
         .subscription{

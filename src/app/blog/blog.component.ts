@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 export class BlogComponent implements OnInit {
   modalData:any;
   flag:number=1;
-  switch=true;
+  switch=true; 
+  
   constructor(private router : Router,private ser:BlogService) { }
   modalUpdate(data:any){
     this.modalData=data;
@@ -22,7 +23,14 @@ export class BlogComponent implements OnInit {
     user_id:new FormControl(),
     password : new FormControl(),
   });
-  blogData=[];
+  getImageUrl(data:any){
+    const parser = new DOMParser();
+    const html = parser.parseFromString(data.content,'text/html');
+    const img = html.querySelector('img');
+    const url = img ? img.src : '';
+    return url;
+  }
+  blogData:any;
   flagVal(){
     
     this.flag += 1;
@@ -41,16 +49,19 @@ export class BlogComponent implements OnInit {
   }
 
   getBlogData(){
-    this.ser.getBlogData().subscribe((resp:{status:number,msg:any})=>{
+ 
+    this.ser.getBlogData().subscribe((resp:{status:number,data:any})=>{
         if(resp.status==200){
-            this.blogData = resp.msg;
-           /*console.log(this.blogData);*/
+          this.blogData = JSON.parse(resp.data).items;
+          
         }
+        
     });
+    
   }
 
   showBlog(blogData){
-    this.router.navigate(['/view-blog',blogData.bloghead]);
+    this.router.navigate(['/view-blog',blogData.id]);
   }
   ngOnInit() {
     this.getBlogData();

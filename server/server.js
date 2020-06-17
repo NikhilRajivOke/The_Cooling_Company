@@ -4,8 +4,10 @@ var app = new express();
 var mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const { google } = require("googleapis");
+const request = require('request');
 const OAuth2 = google.auth.OAuth2;
-
+const Blogger_API = process.env.BLOGGER_API_KEY;
+const Blogger_id = process.env.BLOGGER_ID;
 const dburl = process.env.DB_URL;
 var Schema = mongoose.Schema;
 var BlogsSchema = mongoose.Schema({
@@ -117,33 +119,23 @@ app.post('/blog',(req,res)=>{
     //res.json({msg:"received data"});
 });
 
-app.get('/getBlogdata',(req,res)=>{
-    mongoose.connect(dburl,(err)=>{
-        if(err){
-            console.log("Connection error");
+app.get('/getBlogdata',(req,resp)=>{
+    request(`https://www.googleapis.com/blogger/v3/blogs/${Blogger_id}/posts?key=${Blogger_API}`,function(err,res,doc){
+        if(!err && res.statusCode == 200 ){
+            resp.json({status:200,data:doc});
+            console.log(typeof(doc));
         }
         else
         {
-            Blogs.find({},(err,doc)=>{
-                if(err)
-                {
-                    res.json({"status":500,"msg":err});
-                }
-                else
-                {
-                    res.json({status:200,"msg":doc});
-                }
-            });
-
-            
+            console.log("error occured : ",err)
         }
     })
 });
 
-app.get('/initBlog/:head',(req,res)=>{
+app.get('/initBlog/:head',(req,resp)=>{
      const head=req.params.head;
      console.log("Head value : ", head)
-     mongoose.connect(dburl,(err)=>{
+     /*mongoose.connect(dburl,(err)=>{
          if(err){
              res.json({status:500,msg:"Cant Connect to DB"});
          }
@@ -158,7 +150,13 @@ app.get('/initBlog/:head',(req,res)=>{
                  }
              })
          }
-     })
+     })*/
+     request(`https://www.googleapis.com/blogger/v3/blogs/${Blogger_id}/posts/${head}?key=${Blogger_API}`,function(err,res,doc){
+        if(!err && res.statusCode == 200 ){
+            resp.json({status:200,data:doc});
+            console.log(typeof(doc));
+        }
+    })
     
 });
 app.post('/addsubscriber',(req,res)=>{
