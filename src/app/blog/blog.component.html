@@ -220,23 +220,25 @@
                 <span id="blog-view">
                     <div>
                     <div class="item one">
-                        <div class="img-contain"><img src='{{blog?.media}}' alt="blog image" class="img-fluid blog-img">
+                        <div class="img-contain"><img [src]='getImageUrl(blog)' alt="blog image" class="img-fluid blog-img">
                         </div>
-                        <div style="font-size: 2em;text-align: center;">{{blog?.bloghead}}</div>
-                        <div class="blog-content">{{blog.blogbody}}</div>
+                        <div style="font-size: 2em;text-align: center;">{{blog?.title}}</div>
+                        <div class="blog-content">{{blog.labels}}</div>
                         <button type="button" class="btn btn-more" data-toggle="modal"
                             data-target=".bd-example-modal-lg" (click)="showBlog(blog)">Read More</button>
+                            <p>{{blog.published}}</p>
                     </div>
                    </div>
                     <div>
                         <div class="item two">
-                            <div class="img-contain"><img src='{{blogData[i+1]?.media}}' alt="blog image"
+                            <div class="img-contain"><img [src]='getImageUrl(blogData[i+1])' alt="blog image"
                                     class="img-fluid blog-img">
                             </div>
-                            <div style="font-size: 2em;text-align: center;">{{blogData[i+1]?.bloghead}}</div>
-                            <div class="blog-content">{{blogData[i+1].blogbody}}</div>
+                            <div style="font-size: 2em;text-align: center;">{{blogData[i+1]?.title}}</div>
+                            <div class="blog-content">{{blogData[i+1].labels}}</div>
                             <button type="button" class="btn btn-two" data-toggle="modal"
                                 data-target=".bd-example-modal-lg" (click)="showBlog(blogData[i+1])">Read More</button>
+                            <p>{{blogData[i+1].published}}</p>
                         </div>
                     </div>
                 </span>
