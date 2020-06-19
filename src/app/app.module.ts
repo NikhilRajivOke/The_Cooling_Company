@@ -55,7 +55,7 @@ import { ViewBlogComponent } from './view-blog/view-blog.component';
       {
         path:"view-blog/:blogData",component:ViewBlogComponent
       }
-    ])
+    ],{scrollPositionRestoration:"top"})
   ],
   providers: [],
   bootstrap: [AppComponent]

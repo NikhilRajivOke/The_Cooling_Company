@@ -4,8 +4,13 @@
             <p class="heading">{{initBlog?.title}}</p>
         </div>
         <div class="sub-titles">
-            <div *ngFor="let topic of topics">
-                <p class="subtitles">{{topic?.topic}}</p>
+            <div *ngFor="let topic of initBlog?.labels;let last = last">
+                <span *ngIf="islast;else other">
+                    <p> {{topic}} </p>
+                </span>
+                <ng-template #other>
+                    <p> {{topic}} | </p>
+                </ng-template>
             </div>
         </div>
         <div class="author">
@@ -20,10 +25,6 @@
     </div>
     <div class="blogbody">
         <div class="blogread" id="bloginsert">
-            <!--<img src="{{initBlog.media}}" class="img-fluid">
-            <p class="blogbody">
-                {{initBlog.blogbody}}
-            </p>-->
         </div>
         <div class="newsletter">
             <div class="subscription">

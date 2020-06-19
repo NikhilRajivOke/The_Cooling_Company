@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>-->
-<section id="search" class="container">
+<!--<section id="search" class="container">
     <form [formGroup]="" id="search-box">
         <input type="text" id="search-text" placeholder="  Search Blogs...">
         <span class="fas fa-search search-icon"></span>
@@ -131,7 +131,7 @@
         </div>
     </div>
 </div>
-
+-->
 <!--
     <div class="container-fluid sub-blogs">
         <div class="row mx-auto">
@@ -212,7 +212,7 @@
 </body>-->
 
 
-<div class="container">
+<!--<div class="container">
     <div *ngIf="flag">
         <div *ngFor='let blog of blogData ; let i = index;let even = even'>
             <div *ngIf=even>
@@ -245,4 +245,44 @@
             </div>           
         </div>
     </div>
+</div>-->
+<div id="blog-top">
+    <img src="../../assets/blog-image.jpg" class="img-fluid">
+</div>
+<div id="search-img">
+<input id="blog-search" type="text" placeholder="search for blog ..">
+<span class="fas fa-search search-icon"></span>
+</div>
+<div class="container-fluid">
+    <span id="blog-view">
+        <div *ngFor='let blog of blogData ; let i = index;let first = first ; let last=last'>
+
+            <div class="item one">
+                <div class="img-contain"><img [src]='getImageUrl(blog)' alt="blog image" class="img-fluid blog-img">
+                </div>
+                <div class="blog-title">{{blog?.title}}</div>
+                <div class="blog-content">
+                    <div style="padding-top:3%">
+                        <p class="tag">Tags : </p>
+                        <div *ngFor='let label of blog.labels;last as islast' class="labels">
+                            <span *ngIf="islast;else other">
+                                <p> {{label}} </p>
+                            </span>
+                            <ng-template #other>
+                                <p> {{label}} | </p>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <div id="btn-read">
+                    <button type="button" class="btn btn-more" data-toggle="modal" data-target=".bd-example-modal-lg"
+                        (click)="showBlog(blog)">Read More ></button>
+                    </div>
+                </div>
+                <hr id="hr-line">
+                <p class="date">{{blog.published | date}}</p>
+
+
+            </div>
+        </div>
+    </span>
 </div>
