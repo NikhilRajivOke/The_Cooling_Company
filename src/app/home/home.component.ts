@@ -53,7 +53,12 @@ export class HomeComponent implements OnInit {
 
   };
   ngOnInit() {
-   
+   $('#check-btn').click(()=>{
+     $('html,body').animate({
+      scrollTop: $('#serv-div').offset().top},
+      3000
+     )
+   })
   }
 
  
