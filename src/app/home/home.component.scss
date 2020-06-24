@@ -1,10 +1,48 @@
 body{
     overflow: hidden;
 }
-#home_banner{
-    background-image: url("../../assets/home_banner.jpg");
+#hero{
+ background-image: url("../../assets/geometric-decoration-5836.jpg");
+ background-size: cover;
+ position: relative;
+ height:600px;
 }
-img{
+.hero-content{
+    position:absolute;
+    top:28%;
+    left:5%;
+    width:30%;
+    height:40%;
+    font-size:4em;
+    font-family: sans-serif;
+    font-weight: bolder;
+    line-height:50px;
+    .brand_title{
+        .the{
+            color:black;
+        }
+        .Cooling{
+            color:white;
+        }
+        .comp{
+            color:white;
+        }
+    }
+    .checkout-btn{
+        margin-top:15%;
+        width:100%;
+        .btn-check{
+            background-color: white;
+            box-shadow: 0px 10px 40px rgba(0,0,0,0.8);
+            &:hover{
+                background-color: rgba(0,0,0,0.8);
+                color:white;
+            }
+        }
+    }
+}
+
+/*img{
     max-width:556px;
     max-height:330px;
 }
@@ -13,19 +51,6 @@ img{
     border-top: 6px solid yellow;
     margin-bottom: 2%; 
 }
-.qual {
-    
-    position: relative;
-    animation-name: linear-animate;
-    animation-duration: 6s;
-    animation-fill-mode:both;
-}
-@keyframes linear-animate{
-    from {left:0;}
-    to {left:44%}
-
-}
-
 .quality-content h3{
     color:rgb(243, 22, 22);
 }
@@ -51,7 +76,51 @@ img{
 .col-des span:hover{
     color:yellow;
 }
-
+*/
+#qualities{
+    padding-top:8%;
+    padding-bottom: 8%;
+    /*background-color:rgb(231, 229, 229);*/
+    text-align: center;
+    background-color:whitesmoke;
+    .qual{
+        font-family: sans-serif;
+        font-size:5vw;
+    }
+    hr{
+        width:10%;
+        border-top: 6px solid yellow;
+        margin-bottom: 2%; 
+    }
+    .qual-view{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 5%;
+        .flex-item{
+            border-radius:25px;
+            background-color: white;
+            width:30%;
+            box-shadow: 0 2px 4px rgba(51, 51, 51, 0.8);
+            .flex-title{
+                color:white;
+                /*background-color:rgb(253,247,1);*/
+                 background-color: rgba(0,0,0,0.8);
+                font-size:2em;
+                font-family: sans-serif;
+            } 
+            .sub{
+                font-size:1em;
+                color:rgb(65, 87, 185);
+                font-family: sans-serif;
+            } 
+            .quality-cont{
+                padding:5%;
+                color:rgb(105, 105, 105)
+            }  
+        }
+    }
+}
 .container-fluid{
     padding: 0px;
 }
@@ -89,15 +158,105 @@ img{
 }
 
 #projects{
-    /*text-align: center;*/
-    margin-top:3%;
+    text-align: center;
+    margin-top:9%;
+    line-height:50px;
+    .portfolio{
+        font-size:2em;
+        font-family:sans-serif;
+        
+    }
+    .pro{
+        font-size:4em;
+        font-family: sans-serif;
+    }
+    hr{
+        width:10%;
+        border-top: 6px solid yellow;
+        margin-bottom: 3%; 
+    
+    }
+    .slick-slide img{
+        display:initial;
+    }
+    .slick-slider {  
+        width:90%;  
+        margin:auto;
+    }
+    .card{
+        align-self: center;
+        border:none;
+        text-align: center;
+        .img-center{
+            align-self: center;
+        }
+        .card-title{
+            padding-top: 2%;
+        }
+    }
+    
+}
+.heading{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top:5%;
+    margin-bottom:5%;
+    .our{
+        font-size:4em;
+    }
+    hr{
+        
+        width:10%;
+        border-top: 6px solid yellow;
+        margin-bottom: 3%; 
+    }
+
+}
+.services-div{
+    background-image: url('../../assets/new-back.jpg');
+    height:400px;
+    .bg-color{
+        display:flex;
+        position: relative;
+        justify-content:space-evenly;
+        background-color: rgba(0,0,0,0.5);
+        height:400px;
+        #serv-img{
+        position: relative;
+        top:-12%;
+        }
+        .flex-services{
+        display: flex;
+        width:60%;
+        justify-content:space-around;
+        align-content: center;
+        flex-wrap: wrap;
+        color:white;
+        .item{
+            width:30%;
+            border:2px solid white;
+            padding:2%;
+            text-align: center;
+            hr{
+                border:2px solid yellow;
+                width:50%;
+            }
+            &:hover{
+                color:yellow;
+                border:2px solid yellow;
+                hr{
+                    border:2px solid white;
+                }
+            }
+        }
+        }
+    }
 }
 
 #projects hr{
     width:10%;
     border-top: 6px solid yellow;
     margin-bottom: 3%; 
-
 }
 #projects .card{
     align-self: center;
@@ -110,7 +269,4 @@ img{
     font-size: 2rem;
     padding-top: 2%;
 }
-.slick-slider {  
-    width:90%;  
-    margin:auto;
-  }
+

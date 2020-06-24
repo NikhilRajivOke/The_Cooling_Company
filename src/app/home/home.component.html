@@ -51,7 +51,7 @@
 </head>
 
 <body>
-    <div class="container" class="slider" id="home_banner">
+    <!--<div class="container" class="slider" id="home_banner">
         <div id="carouselSlide" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li class="active" data-target="#carouselSlide" data-slide-to="0"></li>
@@ -148,44 +148,57 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>-->
+    <div id="hero" class="container-fluid">
+        <div class="hero-content">
+           <div class="brand_title">
+               <div class="the">The</div>
+               <div class="Cooling">Cooling</div>
+               <div class="comp">Company</div>
+            </div>
+            <div class="checkout-btn">
+                <button class="btn btn-lg btn-check"> Check us Out </button>
+            </div>
+        </div>
     </div>
+
     <div id="qualities" class="container-fluid">
         <h2 id="qual-section" class="qual">Our Qualities</h2> 
         <div class="quality-content">
             <hr>
-            <div class="row">
-                <div class="col-md-4 col-design">
-                    <h2>Title 1</h2>
-                    <h3>Subtitle</h3>
-                    <p>
+            <div class="qual-view">
+                <div class="flex-item">
+                    <div class="flex-title">Title 1</div>
+                    <div class="sub">Subtitle</div>
+                    <div class="quality-cont">
                         Construction projects are fast-paced, and even a single day's delay can mean huge cost overruns.
                         Our Rapid Design Process is flexible and agile. Our MEP engineering design turnaround time is
                         50% faster than anyone else in the industry.
-                    </p>
+                    </div>
                 </div>
-                <div class="col-md-4 col-design">
-                    <h2>Title 1</h2>
-                    <h3>Subtitle</h3>
-                    <p>
+                <div class="flex-item">
+                    <div class="flex-title">Title 2</div>
+                    <div class="sub">Subtitle</div>
+                    <div class="quality-cont">
                         To eliminate the cost and disruption of construction change orders on your project, Nearby
                         Engineers applies strict quality control to produce clear, easily priced and built designs. When
                         working with one of Nearby Engineers certified contractors, we even offer a Zero Change Order
                         Guarantee.
-                    </p>
+                    </div>
                 </div>
-                <div class="col-md-4 col-design">
-                    <h2>Title 3</h2>
-                    <h3>Subtitle</h3>
-                    <p>
+                <div class="flex-item">
+                    <div class="flex-title">Title 3</div>
+                    <div class="sub">Subtitle</div>
+                    <div class="quality-cont">
                         An active feedback loop ensures all opportunities for improvement are captured in our master
                         templates to assure your project goes from engineering design to built in the shortest time and
                         at the lowest cost possible. We have the highest first-time approval on our designs: 80%.
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div style="margin-top:5%">
+    <!--<div>
         <div class="expertise">
             <div class="expertise-info container-fluid">
                 <h1>Our Company Services</h1>
@@ -230,10 +243,47 @@
 
             </div>
         </div>
+    </div>-->
+    <div class="heading">
+        <p class="our">Our Services</p>
+        <hr>
+    </div>
+    <div class="services-div">
+        <div class="bg-color">
+        <div id="services">
+            <img id="serv-img" src="../../assets/service-man.png" class="img-fluid" alt="man-img">
+        </div>
+        <div class="flex-services">
+            <div class="item">
+                <span class="fas fa-lightbulb fa-5x"></span>
+                <h3>Electrical</h3>
+                <hr>
+                <p>Today's buildings have more electrical components than ever. From low to high voltage
+                    building
+                    systems, normal and emergency power, we have your solution.</p>
+            </div>
+            <div class="item">
+                <span class="fas fa-wrench fa-5x"></span>
+                <h3>Plumbing</h3>
+                <hr>
+                <p>Today's buildings have more electrical components than ever. From low to high voltage
+                    building
+                    systems, normal and emergency power, we have your solution.</p>
+            </div>
+            <div class="item">
+                <span class="fas fa-fire-extinguisher fa-5x"></span>
+                <h3>Fire Protection</h3>
+                <hr>
+                <p>Today's buildings have more electrical components than ever. From low to high voltage
+                    building
+                    systems, normal and emergency power, we have your solution.</p>
+            </div>
+        </div>
+    </div>
     </div>
     <div id="projects">
-        <h5 class="qual">PROJECT PORTFOLIO</h5>
-        <h2 class="qual">Our Projects</h2>
+        <div class="portfolio">PROJECT PORTFOLIO</div>
+        <div class="pro">Our Projects</div>
         <hr>
         <div class="container mx-auto">
         <div class="row">  
@@ -241,7 +291,7 @@
               <div ngxSlickItem  *ngFor="let image of imagesData" class="slide">  
                 <div class="card">
                     <div class="card-image card-img-top">
-                        <img src="{{image.img}}" class="img-fluid"
+                        <img src="{{image.img}}" class="img-fluid img-center"
                             alt="Project Images" />
                     </div>
                     <div class="card-title">{{image.title}}</div>
