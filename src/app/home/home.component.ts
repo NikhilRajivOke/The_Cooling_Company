@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit, OnDestroy, ElementRef } from '@angular/core';
 import * as $ from 'jquery';
+import ScrollOut from 'scroll-out';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit,AfterContentInit,OnDestroy {
   screensize: boolean = false;
-  constructor() { }
+  so:any;
+  constructor(private el: ElementRef) { }
   imagesData = [
     { img: "../assets/ac-soln.jpg", title: "1" },
     { img: "../assets/cold-storage.jpg", title: "2" },
@@ -61,6 +63,13 @@ export class HomeComponent implements OnInit {
    })
   }
 
- 
+ ngAfterContentInit(){
+ this.so = ScrollOut({
+   scope:this.el.nativeElement
+ });
+ }
+ ngOnDestroy(){
+  this.so.teardown();
+ }
 
 }

@@ -1,5 +1,14 @@
 body{
     overflow: hidden;
+    [data-scroll] {
+        transition: opacity 2s;
+      }
+      [data-scroll="in"] {
+        opacity: 1;
+      }
+      [data-scroll="out"] {
+        opacity: 0;
+      }
 }
 #hero{
  background-image: url("../../assets/geometric-decoration-5836.jpg");
@@ -102,6 +111,10 @@ body{
             background-color: white;
             width:30%;
             box-shadow: 0 2px 4px rgba(51, 51, 51, 0.8);
+            @media (max-width:576px) {
+                width:100%;
+                margin:5%;
+            }
             .flex-title{
                 color:white;
                 /*background-color:rgb(253,247,1);*/
@@ -124,8 +137,8 @@ body{
 .container-fluid{
     padding: 0px;
 }
-.expertise{
-    /*position:absolute;*/
+/*.expertise{
+    /*position:absolute;
     width:100%;
     background-image: url("../../assets/comp-back.jpg");
 }
@@ -156,7 +169,7 @@ body{
 #addservice{
     margin-top:2%;
 }
-
+*/
 #projects{
     text-align: center;
     margin-top:9%;
@@ -187,6 +200,7 @@ body{
         align-self: center;
         border:none;
         text-align: center;
+        outline:0;
         .img-center{
             align-self: center;
         }
@@ -228,14 +242,15 @@ body{
         .flex-services{
         display: flex;
         width:60%;
-        justify-content:space-around;
+        justify-content:center;
         align-content: center;
         flex-wrap: wrap;
         color:white;
         .item{
             width:30%;
             border:2px solid white;
-            padding:2%;
+            margin:10px;
+            padding:10px;
             text-align: center;
             hr{
                 border:2px solid yellow;

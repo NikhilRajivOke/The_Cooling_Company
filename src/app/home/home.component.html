@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+
 <head>
     <style>
         @media(min-width:900px) {
@@ -42,10 +45,7 @@
             #projects .card {
                 padding-top: 5%;
             }
-            .slick-slider{
-                
-            }
-            
+
         }
     </style>
 </head>
@@ -151,10 +151,10 @@
     </div>-->
     <div id="hero" class="container-fluid">
         <div class="hero-content">
-           <div class="brand_title">
-               <div class="the">The</div>
-               <div class="Cooling">Cooling</div>
-               <div class="comp">Company</div>
+            <div class="brand_title">
+                <div class="the">The</div>
+                <div class="Cooling">Cooling</div>
+                <div class="comp">Company</div>
             </div>
             <div class="checkout-btn">
                 <button id="check-btn" class="btn btn-lg btn-check"> Check us Out </button>
@@ -163,38 +163,44 @@
     </div>
 
     <div id="qualities" class="container-fluid">
-        <h2 id="qual-section" class="qual">Our Qualities</h2> 
+        <h2 id="qual-section" class="qual" data-scroll>Our Qualities</h2>
         <div class="quality-content">
             <hr>
-            <div class="qual-view">
-                <div class="flex-item">
-                    <div class="flex-title">Title 1</div>
-                    <div class="sub">Subtitle</div>
-                    <div class="quality-cont">
-                        Construction projects are fast-paced, and even a single day's delay can mean huge cost overruns.
-                        Our Rapid Design Process is flexible and agile. Our MEP engineering design turnaround time is
-                        50% faster than anyone else in the industry.
+            <div class="qual-view" data-scroll>
+                <div class="flex-item" data-scroll>
+                        <div class="flex-title">Title 1</div>
+                        <div class="sub">Subtitle</div>
+                        <div class="quality-cont">
+                            Construction projects are fast-paced, and even a single day's delay can mean huge cost
+                            overruns.
+                            Our Rapid Design Process is flexible and agile. Our MEP engineering design turnaround time
+                            is
+                            50% faster than anyone else in the industry.
+                        </div>
                     </div>
-                </div>
-                <div class="flex-item">
-                    <div class="flex-title">Title 2</div>
-                    <div class="sub">Subtitle</div>
-                    <div class="quality-cont">
-                        To eliminate the cost and disruption of construction change orders on your project, Nearby
-                        Engineers applies strict quality control to produce clear, easily priced and built designs. When
-                        working with one of Nearby Engineers certified contractors, we even offer a Zero Change Order
-                        Guarantee.
+                    <div class="flex-item" data-scroll>
+                        <div class="flex-title">Title 2</div>
+                        <div class="sub">Subtitle</div>
+                        <div class="quality-cont">
+                            To eliminate the cost and disruption of construction change orders on your project, Nearby
+                            Engineers applies strict quality control to produce clear, easily priced and built designs.
+                            When
+                            working with one of Nearby Engineers certified contractors, we even offer a Zero Change
+                            Order
+                            Guarantee.
+                        </div>
                     </div>
-                </div>
-                <div class="flex-item">
-                    <div class="flex-title">Title 3</div>
-                    <div class="sub">Subtitle</div>
-                    <div class="quality-cont">
-                        An active feedback loop ensures all opportunities for improvement are captured in our master
-                        templates to assure your project goes from engineering design to built in the shortest time and
-                        at the lowest cost possible. We have the highest first-time approval on our designs: 80%.
+                    <div class="flex-item" data-scroll>
+                        <div class="flex-title">Title 3</div>
+                        <div class="sub">Subtitle</div>
+                        <div class="quality-cont">
+                            An active feedback loop ensures all opportunities for improvement are captured in our master
+                            templates to assure your project goes from engineering design to built in the shortest time
+                            and
+                            at the lowest cost possible. We have the highest first-time approval on our designs: 80%.
+                        </div>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -244,62 +250,112 @@
             </div>
         </div>
     </div>-->
-    <div id="serv-div" class="heading">
+    <div id="serv-div" class="heading" data-scroll>
         <p class="our">Our Services</p>
         <hr>
     </div>
-    <div class="services-div">
+    <div class="services-div" data-scroll>
         <div class="bg-color">
-        <div id="services">
-            <img id="serv-img" src="../../assets/service-man.png" class="img-fluid" alt="man-img">
+            <div id="services">
+                <img id="serv-img" src="../../assets/service-man.png" class="img-fluid" alt="man-img">
+            </div>
+            <ngx-slick-carousel class=" carousel flex-services" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem class="slide item">
+                    <span class="fas fa-lightbulb fa-5x"></span>
+                    <h3>Electrical</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-wrench fa-5x"></span>
+                    <h3>Plumbing</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-fire-extinguisher fa-5x"></span>
+                    <h3>Fire Protection</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div ngxSlickItem class="slide item">
+                    <span class="fas fa-lightbulb fa-5x"></span>
+                    <h3>Electrical</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-wrench fa-5x"></span>
+                    <h3>Plumbing</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-fire-extinguisher fa-5x"></span>
+                    <h3>Fire Protection</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div ngxSlickItem class="slide item">
+                    <span class="fas fa-lightbulb fa-5x"></span>
+                    <h3>Electrical</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-wrench fa-5x"></span>
+                    <h3>Plumbing</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                <div  ngxSlickItem class="slide item">
+                    <span class="fas fa-fire-extinguisher fa-5x"></span>
+                    <h3>Fire Protection</h3>
+                    <hr>
+                    <p>Today's buildings have more electrical components than ever. From low to high voltage
+                        building
+                        systems, normal and emergency power, we have your solution.</p>
+                </div>
+                
+            </ngx-slick-carousel>
         </div>
-        <div class="flex-services">
-            <div class="item">
-                <span class="fas fa-lightbulb fa-5x"></span>
-                <h3>Electrical</h3>
-                <hr>
-                <p>Today's buildings have more electrical components than ever. From low to high voltage
-                    building
-                    systems, normal and emergency power, we have your solution.</p>
-            </div>
-            <div class="item">
-                <span class="fas fa-wrench fa-5x"></span>
-                <h3>Plumbing</h3>
-                <hr>
-                <p>Today's buildings have more electrical components than ever. From low to high voltage
-                    building
-                    systems, normal and emergency power, we have your solution.</p>
-            </div>
-            <div class="item">
-                <span class="fas fa-fire-extinguisher fa-5x"></span>
-                <h3>Fire Protection</h3>
-                <hr>
-                <p>Today's buildings have more electrical components than ever. From low to high voltage
-                    building
-                    systems, normal and emergency power, we have your solution.</p>
-            </div>
-        </div>
-    </div>
     </div>
     <div id="projects">
-        <div class="portfolio">PROJECT PORTFOLIO</div>
-        <div class="pro">Our Projects</div>
+        <div class="portfolio" data-scroll>PROJECT PORTFOLIO</div>
+        <div class="pro" data-scroll>Our Projects</div>
         <hr>
         <div class="container mx-auto">
-        <div class="row">  
-            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">  
-              <div ngxSlickItem  *ngFor="let image of imagesData" class="slide">  
-                <div class="card">
-                    <div class="card-image card-img-top">
-                        <img src="{{image.img}}" class="img-fluid img-center"
-                            alt="Project Images" />
+            <div class="row" style="margin-top:5%;margin-bottom:5%;" data-scroll>
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let image of imagesData" class="slide">
+                        <div class="card">
+                            <div class="card-image card-img-top">
+                                <img src="{{image.img}}" class="img-fluid img-center" alt="Project Images" />
+                            </div>
+                            <div class="card-title">{{image.title}}</div>
+                        </div>
                     </div>
-                    <div class="card-title">{{image.title}}</div>
-                </div>
-              </div>  
-            </ngx-slick-carousel>  
-          </div>
-          </div>
+                </ngx-slick-carousel>
+            </div>
+        </div>
     </div>
 
 </body>
+
+</html>
