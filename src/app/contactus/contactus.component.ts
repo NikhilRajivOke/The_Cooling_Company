@@ -51,7 +51,7 @@ RenderMap=()=>{
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
  };
- this.map = new google.maps.Map(this.mapElement.nativeElement,    mapProperties);
+ this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
   }
 }
 

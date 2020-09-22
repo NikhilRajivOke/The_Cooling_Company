@@ -1,72 +1,83 @@
 <body>
-<footer class="footer navbar-fixed-bottom">
-    <div class="footer">
-        <div class="container">
-            <div class="row mx-auto">
-                <div class="col-md-3">
-                    <h4>ABOUT US</h4>
-                    <div class="description">
-                        <h4>THE COOLING COMPANY</h4>
-                        <div class="description-data">
-                            At New York Engineers , we search for simple, eloquent solutions to complex problems. We
-                            minimize construction costs by eliminating the extraneous and focusing on the overall
-                            efficiency for the most streamlined designs
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h4>USEFUL LINKS</h4>
-                    <div class="description">
-                        <div class="description-data">
-                           <ul *ngFor="let fd of FD">
-                               <li class="coh"><a routerLink="#" style="font-size: 1em;">{{fd.link}}<span class="fas fa-arrow-right" style="margin-left:3px"></span></a></li>
-                           </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h4>CONTACT US</h4>
-                    <div class="description">
-                        <p style="font-size:1em;">H.Q. - 135 West 41st street 5th floor,
-                            New York, NY 10036</p>
-                        
-                        <p>Tel : 212-575-5300
-                            888-575-8844</p>
-                        
-                        <p>E-mail : info@ny-engineers.com</p>
-
-                        <div class="logos">
-                            <span id="fb" class="fab fa-facebook"></span>
-                            <span class="fab fa-linkedin "></span>
-                            <span class="fab fa-twitter"></span>
-                            <span class="fab fa-youtube "></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <h4>RECENT BLOGS</h4>
-                    <div class="description">
-                       <div class="blogs">
-                           <div class="blog">
-                               <p class="blog-data">How Companies Can Use BIM as a Business Tool</p>
-                               <span class="fas fa-calendar-alt">  May 8, 2020</span>
-                           </div>
-                           <div class="blog">
-                            <p class="blog-data">How Companies Can Use BIM as a Business Tool</p>
-                            <span class="fas fa-calendar-alt">  May 8, 2020</span>
+    <footer class="footer navbar-fixed-bottom">
+        <div class="footer">
+            <div class="container">
+                <div class="row mx-auto">
+                    <div class="col-md-3">
+                        <h4>ABOUT US</h4>
+                        <div class="description">
+                            <h4>THE COOLING COMPANY</h4>
+                            <div class="description-data">
+                                At The Cooling Company , we search for simple, eloquent solutions to complex problems. We
+                                minimize MEP costs by eliminating the extraneous and focusing on the overall
+                                efficiency for the most streamlined designs.
                             </div>
-                       </div>
-                       
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>ENQUIRE</h4>
+                        <form [formGroup]="enquireForm" class="enquire-form">
+                            <label>Your Name</label>
+                            <input type="text">
+                            <br>
+                            <label>Your Email</label>
+                            <input type="email">
+                            <br>
+                            <label>Your Phone</label>
+                            <input type="number">
+                            <br>
+                            <label>Subject</label>
+                            <input type="text">
+                            <br>
+                            <label>Message</label>
+                            <input type="text">
+                            <br>
+                            <button type="submit" class="btn btn-enquire">Send</button>
+                        </form>                     
+                    </div>
+                    <div class="col-md-3">
+                        <h4>CONTACT US</h4>
+                        <div class="description">
+                            <p style="font-size:1em;">14, Sarthak Towers ,
+                                Opposite Yashwantrao Chavan Natyagrah, Kothrud ,Pune 411038</p>
+                            
+                            <p>Tel : / 9145010803/
+                                7820838344/</p>
+                            
+                            <p>E-mail : cooling.co.ind@gmail.com</p>
+    
+                            <div class="logos">
+                                <span id="fb" class="fab fa-facebook"></span>
+                                <span class="fab fa-linkedin "></span>
+                                <span class="fab fa-twitter"></span>
+                                <span class="fab fa-youtube "></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <h4>RECENT BLOGS</h4>
+                        <div class="description">
+                           <div class="blogs">
+                               <div class="blog">
+                                   <p class="blog-data">How Companies Can Save Money with Real MEP</p>
+                                   <span class="fas fa-calendar-alt">  Sept 12, 2020</span>
+                               </div>
+                               <div class="blog">
+                                <p class="blog-data">How Cold Rooms can save Electrical Consumption by these basic steps</p>
+                                <span class="fas fa-calendar-alt">  Sept 15, 2020</span>
+                                </div>
+                           </div>
+                           
+                        </div>
                     </div>
                 </div>
+                <hr>
+               
             </div>
-            <hr>
-           
+            <div class="copyright">
+                <p>&copy; 2020 The Cooling Company. All Right Reserved. Legal Notice | Trademarks</p>
+            </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2020 New York Engineers. All Right Reserved. Legal Notice | Trademarks</p>
-        </div>
-    </div>
-</footer>
-
-</body>
+    </footer>
+    
+    </body>

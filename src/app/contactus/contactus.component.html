@@ -1,62 +1,27 @@
-<section id="contactUs">
-    <div class="container">
-        <div class="flexview mx-auto">
-            <div class="component-content">
-                <p class="ComeVisitUs">Come Visit Us</p>
-                <p class="subtext">we are in Pune, the east Oxford.</p>
-                <p class="address">The Cooling Company,Inc <br>Swapnashilp ,Kothrud <br>Pune - 411041</p>
-                <button id="directions" class="btn btn-lg directions">Get Directions</button>
+<body>
+    <div class="contact-us">
+        <div class="form-flex">
+            <div class="form-side">
+                <p class="title">Get in Touch</p>
+                <form [formGroup]="contactus" (onSubmit)="onContact">
+                    <div class="input-grp">
+                    <input type="text" formControl="name" placeholder="Name : ">
+                    <input type="email" formControl="email" placeholder="Email :">
+                    </div>
+                    <div class="input-grp">
+                    <input type="number" formControl="phone" placeholder="Phone :">
+                    <input type="text" formControl="city" placeholder="City :">
+                    </div>
+                    <textarea class="message" formControl="message" placeholder="Message :"></textarea>
+                    <button type="submit" class="btn sub-btn">Send</button>
+                </form>
             </div>
-            <div class="circleView">
-                <div class="img-section">
-                    <img src="../../assets/contact-us.jpg" class="img-fluid">
-                </div>
+            <div class="map">
+                <p>Or You can contact or visit us in our office from Monday To Saturday from 09.30 am to 6.00 pm</p>
+                <section id="googleMaps">
+                    <div #mapRef class="googlemaps"></div>
+                </section>               
             </div>
         </div>
     </div>
-    <section id="googleMaps">
-        <div #mapRef class="googlemaps"></div>
-    </section>
-
-    <section id="Form">
-        <div class="container">
-            <div class="heading-section">
-                <div class="get_in_touch">
-                    Get In touch
-                </div>
-                
-                <div class="Banner">Would be happy to connect !!</div>
-                <div class="project">Got a project you are excited about and think we can help?<br>Just fill the form below</div>
-            </div>
-
-            <div class="flexForm">
-                <form [formGroup]="contactus" id="formdiv" autocomplete="off" (ngSubmit)="FormData()">
-                    <div class="form-field">
-                        <input type="text" name="name" formControlName="name" required>
-                        <label for="name" class="labelname"> <span class="content-name">Name</span></label>
-                    </div>
-                    <div class="form-field">
-                        <input type="text" name="phone" formControlName="phone"  required> 
-                        <label for="phone" class="labelname"> <span class="content-name">Phone No.</span></label>
-                    </div>
-                    <div class="form-field">
-                        <input type="email" name="email" formControlName="email_id"  required> 
-                        <label for="email" class="labelname"> <span class="content-name">Email id.</span></label>
-                    </div>
-                    <div class="form-field">
-                        <input type="text" name="company_name" formControlName="company"   required> 
-                        <label for="company_name" class="labelname"> <span class="content-name">Company Name</span></label>
-                    </div>
-                    <div class="form-field">
-                        <input type="text" name="help_need" formControlName="help"   required> 
-                        <label for="help_need" class="labelname"> <span class="content-name">Any help from our side</span></label>
-                    </div>
-                    <div class="form-check">
-                        <span><input type="checkbox" formControlName="call">Want a call from us </span>
-                    </div>
-                    <input type="submit" class="btn btn-submit" value="submit">
-                </form>
-            </div>
-        </div>
-    </section>
-</section>
+</body>

@@ -44,16 +44,19 @@ body{
 .blogbody{
     padding-top:5vh;
     display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    @media(max-width:576px) {
-        flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
+    justify-content: space-between;
     .blogread{
-        padding:2vw;
+        flex:2 1 60%;
+        #bloginsert{
+            img{
+                width:100%;
+                height:auto;
+            }
+        }
     }
     .newsletter{
+        flex:1 1 35%;
         .subscription{
             p{
                 font-family: Arial, Helvetica, sans-serif;
