@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup,FormControl} from '@angular/forms';
 import * as $ from 'jquery';
 @Component({
   selector: 'app-footer',
@@ -8,6 +9,13 @@ import * as $ from 'jquery';
 })
 export class FooterComponent implements OnInit {
 
+  enquireForm = new FormGroup({
+    name : new FormControl(),
+    email : new FormControl(),
+    phone : new FormControl(),
+    subject : new FormControl(),
+    message : new FormControl()
+  })
   constructor() { }
   FD=[
     {link:"SERVICES"},

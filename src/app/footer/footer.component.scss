@@ -48,3 +48,17 @@
     margin-bottom: 2%;
 }
 
+.enquire-form{
+    label{
+        margin-top:5%;
+    }
+    .btn-enquire{
+        margin-top:8%;
+        color:black;
+        background-color: white;
+        &:hover{
+            background-color: grey;
+            color:white;
+        }
+    }
+}
