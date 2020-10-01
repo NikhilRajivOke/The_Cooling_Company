@@ -1,0 +1,101 @@
+body{
+    margin-top:10%;
+}
+.heading{
+    font-family: sans-serif;
+    text-align: center;
+    margin-top:4%;
+    margin-bottom:5%;
+    .our{
+        font-size:50px;
+    }
+    hr{
+        
+        width:10%;
+        border-top: 6px solid #faa307;
+        margin-bottom: 3%; 
+    }
+
+}
+.services-div{
+    background-image: url('../../assets/new-back.jpg');
+    height:400px;
+    .bg-color{
+        display:flex;
+        position: relative;
+        justify-content:space-evenly;
+        background-color: rgba(0,0,0,0.5);
+        height:400px;
+        #serv-img{
+        position: relative;
+        top:-12%;
+        @media (max-width:576px)
+        {
+            display:none;
+        }
+        }
+        .flex-services{
+        display: flex;
+        width:60%;
+        margin-top:2%;
+        justify-content:space-around;
+        align-content: center;
+        flex-wrap: wrap;
+        color:white;
+        @media (max-width:576px) {
+            width:80%;
+        }
+        .item{
+            width:30%;
+            border:2px solid white;
+            margin:10px;
+            padding:10px;
+            text-align: center;
+            display:block;
+            position: relative;
+            border-radius:25px;
+            @media (max-width:576px) {
+                width:100%;
+            }
+            .hover-view{
+                position: absolute;
+                bottom:0;
+                left:0;
+                right:0;
+                background:linear-gradient(to top,rgb(236, 252, 0.5),rgba(249, 253, 6, 0));
+                border-radius: 25px;
+                overflow: hidden;
+                height:0%;
+                transition: .5s ease;
+                .btn-hover{
+                    color:black;
+                    position:absolute;
+                    margin:auto;
+                    top:75%;
+                    text-align:center;
+                    background-color:white;
+                    border-radius: 25px;
+                    font-family: sans-serif;
+                    display:block;
+                    position:relative;
+                    width:80%;
+                    overflow:hidden;
+                    &:hover{
+                        color:white;
+                        background-color:rgb(42, 243, 42);
+                    }
+                }
+            }
+            hr{
+                border:2px solid yellow;
+                width:50%;
+            }
+            &:hover{
+                .hover-view{
+                    height:100%;
+                }
+            }
+        }
+        }
+    }
+}
