@@ -66,6 +66,7 @@ getImageUrl(data:any){
  ChangeBlog(data){
    console.log("data id : ",data.id);
     this.getInitBlog(data.id);
+    $('html, body').animate({ scrollTop: 25 }, 'slow');
  }
   ngOnInit() {
     this.sub = this.route.params.subscribe(params=>{

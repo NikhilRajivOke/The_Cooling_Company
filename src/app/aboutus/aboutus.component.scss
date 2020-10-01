@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Roboto Slab");
+
+body{
+    margin:10% 10%;
+}
+
+.display{
+    .title{
+        font-family:"Roboto Slab";
+        font-size:40px;
+        text-align: center;
+    }
+    hr{
+        width:20%;
+        border-top: 6px solid #e85d04;
+        margin-bottom: 2%; 
+    }
+    .about_cont{
+        margin:0% 50%;
+        transform: translate(-50%,-50%);
+        margin-top: 10%;
+        width:80%;
+        font-family: "Inter";    
+    }
+    .vision{
+        margin:5% 0%;
+        .head{
+            font-family:"Inter";
+            font-size:30px;
+        }
+        .flex-view{
+            margin-top: 3%;
+            display:flex;
+            flex-wrap:wrap;
+
+            .flex-item{
+                width:55%;
+                padding-right: 5%;
+            }
+            .flex-img{
+                width:45%;
+                .img-alt{
+                    width:100%;
+                }
+            }
+        }
+    }
+    .mission{
+        margin:5% 0%;
+        .head{
+            font-family:"Inter";
+            font-size:30px;
+            text-align:right;
+        }
+        .flex-view{
+            margin-top:3%;
+            display:flex;
+            flex-wrap:wrap;
+
+            .flex-item{
+                width:55%;
+                padding-left:5%;
+                align-content: center;
+                justify-content: center;
+            }
+            .flex-img{
+                width:45%;
+                .img-alt{
+                    width:100%;
+                }
+            }
+        }
+    }
+    .director{
+        margin:5% 0%;
+        .head{
+            font-family:"Inter";
+            font-size:30px;
+            text-align:center;
+        }
+        .flex-view{
+            margin-top: 3%;
+            display:flex;
+            flex-wrap:wrap;
+
+            .flex-item{
+                width:70%;
+                padding-right: 5%;
+            }
+            .flex-img{
+                width:25%;
+                .img-alt{
+                    width:100%;
+                }
+            }
+        }
+    }
+}

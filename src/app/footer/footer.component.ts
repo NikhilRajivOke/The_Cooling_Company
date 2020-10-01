@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms';
 import * as $ from 'jquery';
+import {BlogService} from '../../services/blog-service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
   animations:[]
 })
 export class FooterComponent implements OnInit {
-
+  Blogs:any;
   enquireForm = new FormGroup({
     name : new FormControl(),
     email : new FormControl(),
@@ -16,7 +17,15 @@ export class FooterComponent implements OnInit {
     subject : new FormControl(),
     message : new FormControl()
   })
-  constructor() { }
+  constructor(private ser : BlogService) { }
+  getBlogData(){
+    this.ser.getBlogData().subscribe((resp:{status:number,data:any})=>{
+      if(resp.status==200){
+        //console.log(resp.data);
+        this.Blogs=JSON.parse(resp.data).items;
+      }
+  });
+};
   FD=[
     {link:"SERVICES"},
     {link:"PROJECTS"},
@@ -28,9 +37,8 @@ export class FooterComponent implements OnInit {
     {link:"PRODUCT REVIEWS"}
   ];
   
-  
-
   ngOnInit() {
+    this.getBlogData();
     $(document).ready(function(){
       $('.coh').hover(function(){
         $(this).animate({ left:52 });

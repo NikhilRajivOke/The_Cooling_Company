@@ -58,14 +58,12 @@
                         <h4>RECENT BLOGS</h4>
                         <div class="description">
                            <div class="blogs">
-                               <div class="blog">
-                                   <p class="blog-data">How Companies Can Save Money with Real MEP</p>
-                                   <span class="fas fa-calendar-alt">  Sept 12, 2020</span>
-                               </div>
-                               <div class="blog">
-                                <p class="blog-data">How Cold Rooms can save Electrical Consumption by these basic steps</p>
-                                <span class="fas fa-calendar-alt">  Sept 15, 2020</span>
+                               <div class="blog" *ngFor=" let blog of Blogs ; let i = index">
+                                   <div *ngIf="i<4">
+                                   <p class="blog-data">{{blog.title}}</p>
+                                   <span class="fas fa-calendar-alt">{{blog.published | date}}</span>
                                 </div>
+                               </div>
                            </div>
                            
                         </div>

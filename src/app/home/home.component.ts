@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit, AfterContentInit, OnDestroy {
 
   ];
 
+  download(){
+    
+  }
   slideConfig = {
     "slidesToShow": 4,
     "slidesToScroll": 1,
